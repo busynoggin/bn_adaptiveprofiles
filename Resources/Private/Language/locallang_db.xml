@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<T3locallang>
+	<meta type="array">
+		<type>database</type>
+		<description>Language labels for database tables/fields belonging to extension 'bn_adaptiveprofiles'</description>
+	</meta>
+	<data type="array">
+		<languageKey index="default" type="array">
+			<label index="tx_bnadaptiveprofiles_profile">Profile</label>
+			<label index="tx_bnadaptiveprofiles_profile.name">Name</label>
+			<label index="tx_bnadaptiveprofiles_profile.minimum_width">Minimum Width</label>
+			<label index="tx_bnadaptiveprofiles_profile.maximum_width">Maximum Width</label>
+			<label index="tx_bnadaptiveprofiles_profile.is_default_profile">Is Default Profile?</label>
+		</languageKey>
+	</data>
+</T3locallang>

@@ -1,0 +1,2 @@
+# cat=basic; type=int+; label=Default Desktop Screen Width; When a generic desktop browser is detected, what screen width should be assumed?
+defaultDesktopScreenWidth = 1024
