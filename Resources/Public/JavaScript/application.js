@@ -1,17 +1,16 @@
 (function(w, d, config, undefined) {
 
 	function getScreenWidth() {
-		return screen.width;
+		return w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth || 0;
 	}
 
 	function setScreenWidthInCookie(screenWidth) {
-			document.cookie = 'screenWidth=' + screen.width + '; path=/';
+			document.cookie = 'screenWidth=' + screenWidth + '; path=/';
 	}
 
 	function apply() {
 		var screenWidth = getScreenWidth();
 		setScreenWidthInCookie(screenWidth);
-
 		// Loop over each profile until screen width matches
 		for (var i=0; i<config.profiles.length; i++) {
 			var profile = config.profiles[i];
