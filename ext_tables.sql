@@ -12,7 +12,11 @@ CREATE TABLE tx_bnadaptiveprofiles_profile (
 	minimum_width int(11) DEFAULT '0' NOT NULL,
 	maximum_width int(11) DEFAULT '0' NOT NULL,
 	is_default_profile tinyint(3) DEFAULT '0' NOT NULL,
-	
+
 	PRIMARY KEY (uid),
 	KEY parent (pid)
 ) ENGINE=InnoDB;
+
+CREATE TABLE tt_content (
+  bn_adaptiveprofiles varchar(100) DEFAULT '0' NOT NULL
+);
