@@ -36,7 +36,7 @@ class Tx_BnAdaptiveProfiles_Service_FrontendService implements t3lib_Singleton {
 			$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
 			$currentProfile = $profileService->getCurrentProfile();
 
-			$query = ' AND (bn_adaptiveprofiles=\'0\' OR ' . $GLOBALS['TYPO3_DB']->listQuery('bn_adaptiveprofiles', $currentProfile['uid'], 'tt_content') . ') ';
+			$query = ' AND (bn_adaptiveprofiles=\'0\' OR bn_adaptiveprofiles IS NULL OR bn_adaptiveprofiles=\'\' OR ' . $GLOBALS['TYPO3_DB']->listQuery('bn_adaptiveprofiles', $currentProfile['uid'], 'tt_content') . ') ';
 		}
 
 		return $query;
