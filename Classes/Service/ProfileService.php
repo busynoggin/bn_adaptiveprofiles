@@ -86,6 +86,12 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getCurrentProfile() {
+		// If there's a parameter in the URL, use that as a current.
+		$defaultProfileFromUrl = strip_tags(t3lib_div::_GET('tx_bnadaptiveprofile'));
+		if ($defaultProfileFromUrl) {
+			$this->currentProfile = $this->getProfile($defaultProfileFromUrl);
+		}
+
 		if (!$this->currentProfile) {
 			$screenWidth = $this->getScreenWidth();
 			$profiles = $this->getProfiles();
