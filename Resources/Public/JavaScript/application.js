@@ -1,7 +1,7 @@
 (function(w, d, config, undefined) {
 
 	function getScreenWidth() {
-		return w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth || 0;
+		return w.screen.width || 0;
 	}
 
 	function setScreenWidthInCookie(screenWidth) {
