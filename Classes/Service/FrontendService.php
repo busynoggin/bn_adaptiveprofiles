@@ -42,6 +42,14 @@ class Tx_BnAdaptiveProfiles_Service_FrontendService implements t3lib_Singleton {
 		return $query;
 	}
 
+	public function includeAdapativeProfilesInHash(&$params) {
+		$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
+		$profiles = $profileService->getProfiles();
+		$currentProfile = $profileService->getCurrentProfile();
+
+		$params['hashParameters']['profile'] = $currentProfile['name'];
+	}
+
 }
 
 ?>
