@@ -31,7 +31,8 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 */
 	public function getProfiles() {
 		if (!$this->profiles || !count($this->profiles)) {
-			$statement = $GLOBALS['TYPO3_DB']->prepare_SELECTquery('*', 'tx_bnadaptiveprofiles_profile');
+			$table = 'tx_bnadaptiveprofiles_profile';
+			$statement = $GLOBALS['TYPO3_DB']->prepare_SELECTquery('*', $table, '1=1 ' . $GLOBALS['TSFE']->sys_page->enableFields($table));
 	 		$statement->execute();
 	 		while(($row = $statement->fetch()) !== FALSE) {
 	 			$this->profiles[$row['name']] = $row;
