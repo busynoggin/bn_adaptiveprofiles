@@ -17,21 +17,25 @@ $TCA['tx_bnadaptiveprofiles_profile'] = array(
 	),
 );
 
-t3lib_div::loadTCA('tt_content');
-t3lib_extMgm::addTCAcolumns('tt_content', array(
-	'bn_adaptiveprofiles' => array(
-		'exclude' => TRUE,
-		'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tt_content.only_show_in_profiles',
-		'config' => array(
-			'type' => 'select',
-			'foreign_table' => 'tx_bnadaptiveprofiles_profile',
-			'foreign_table_where' => 'ORDER BY minimum_width, name',
-			'items' => array(),
-			'maxitems' => '999',
-			'size' => '5'
+$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['bn_adaptiveprofiles']);
+$filterContentElementsByProfile = (array_key_exists('filterContentElementsByProfile', $extConf)) ? $extConf['filterContentElementsByProfile'] : TRUE;
+if ($filterContentElementsByProfile) {
+	t3lib_div::loadTCA('tt_content');
+	t3lib_extMgm::addTCAcolumns('tt_content', array(
+		'bn_adaptiveprofiles' => array(
+			'exclude' => TRUE,
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tt_content.only_show_in_profiles',
+			'config' => array(
+				'type' => 'select',
+				'foreign_table' => 'tx_bnadaptiveprofiles_profile',
+				'foreign_table_where' => 'ORDER BY minimum_width, name',
+				'items' => array(),
+				'maxitems' => '999',
+				'size' => '5'
+			)
 		)
-	)
-));
-t3lib_extMgm::addFieldsToPalette('tt_content', 'access', '--linebreak--, bn_adaptiveprofiles');
+	));
+	t3lib_extMgm::addFieldsToPalette('tt_content', 'access', '--linebreak--, bn_adaptiveprofiles');
+}
 
 ?>

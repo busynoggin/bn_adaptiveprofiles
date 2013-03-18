@@ -1,0 +1,4 @@
+page.config.tx_bnadaptiveprofiles {
+	enable = 0
+	javaScriptPath =
+}
