@@ -11,6 +11,7 @@
 			<label index="tx_bnadaptiveprofiles_profile.minimum_width">Minimum Width</label>
 			<label index="tx_bnadaptiveprofiles_profile.maximum_width">Maximum Width</label>
 			<label index="tx_bnadaptiveprofiles_profile.is_default_profile">Is Default Profile?</label>
+			<label index="tt_content.only_show_in_profiles">Only Show in Selected Profiles</label>
 		</languageKey>
 	</data>
 </T3locallang>

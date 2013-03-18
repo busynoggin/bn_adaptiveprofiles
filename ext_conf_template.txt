@@ -1,2 +1,5 @@
-# cat=basic; type=int+; label=Default Desktop Screen Width; When a generic desktop browser is detected, what screen width should be assumed?
-defaultDesktopScreenWidth = 1024
+# cat=basic; type=text; label=Default screen width; When a a screen width cannot be determined from an existing cookie or useragent, this value will be used as the default.
+defaultScreenWidth = 1024
+
+# cat=basic; type=boolean; label=Allow content elements to be filtered by profile; All content elements to be restricted to specific profiles by adding a selector to each content element.
+filterContentElementsByProfile = 1

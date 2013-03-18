@@ -1,17 +1,32 @@
 (function(w, d, config, undefined) {
 
 	function getScreenWidth() {
-		return screen.width;
+		var width;
+
+		// If the device cannot be rotated, lets assume desktop and use full screen width
+		if (typeof window.orientation === "undefined") {
+			width = w.screen.width || 0;
+		} else {
+			// If the device can be rotated, lets assume mobile/tablet and a browser that always operates full width.
+			// Using browser width takes orientation into account so it is more accurate
+			width = w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth || 0;
+
+			// When the device orientation changes, reload page if necessary
+			window.onorientationchange = function() {
+				apply();
+			};
+		}
+
+		return width;
 	}
 
 	function setScreenWidthInCookie(screenWidth) {
-			document.cookie = 'screenWidth=' + screen.width + '; path=/';
+			document.cookie = 'screenWidth=' + screenWidth + '; path=/';
 	}
 
 	function apply() {
 		var screenWidth = getScreenWidth();
 		setScreenWidthInCookie(screenWidth);
-
 		// Loop over each profile until screen width matches
 		for (var i=0; i<config.profiles.length; i++) {
 			var profile = config.profiles[i];

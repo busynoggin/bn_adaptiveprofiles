@@ -3,7 +3,7 @@
 // This file was generated on 2012-07-31 20:58
 
 $extensionPath = t3lib_extMgm::extPath('bn_adaptiveprofiles');
-$extensionClassesPath = $extensionPath . 'classes/';
+$extensionClassesPath = $extensionPath . 'Classes/';
 return array(
 	'tx_bnadaptiveprofiles_service_frontendservice' => $extensionClassesPath . 'Service/FrontendService.php',
 	'tx_bnadaptiveprofiles_service_profileservice' => $extensionClassesPath . 'Service/ProfileService.php',

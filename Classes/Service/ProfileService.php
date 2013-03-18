@@ -31,7 +31,8 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 */
 	public function getProfiles() {
 		if (!$this->profiles || !count($this->profiles)) {
-			$statement = $GLOBALS['TYPO3_DB']->prepare_SELECTquery('*', 'tx_bnadaptiveprofiles_profile');
+			$table = 'tx_bnadaptiveprofiles_profile';
+			$statement = $GLOBALS['TYPO3_DB']->prepare_SELECTquery('*', $table, '1=1 ' . $GLOBALS['TSFE']->sys_page->enableFields($table));
 	 		$statement->execute();
 	 		while(($row = $statement->fetch()) !== FALSE) {
 	 			$this->profiles[$row['name']] = $row;
@@ -86,6 +87,12 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 * @return array
 	 */
 	public function getCurrentProfile() {
+		// If there's a parameter in the URL, use that as a current.
+		$defaultProfileFromUrl = strip_tags(t3lib_div::_GET('tx_bnadaptiveprofile'));
+		if ($defaultProfileFromUrl) {
+			$this->currentProfile = $this->getProfile($defaultProfileFromUrl);
+		}
+
 		if (!$this->currentProfile) {
 			$screenWidth = $this->getScreenWidth();
 			$profiles = $this->getProfiles();
@@ -139,44 +146,17 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 * @return integer
 	 */
 	protected function getScreenWidthFromUserAgent() {
-		$wurflDir = t3lib_extMgm::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/WURFL';
-		$resourcesDir = t3lib_extMgm::extPath('bn_adaptiveprofiles') . 'Resources/Private/Data';
-		require_once($wurflDir . '/Application.php');
-
-		$persistenceDir = PATH_site . 'typo3temp/wurfl/persistence';
-		$cacheDir = PATH_site . 'typo3temp/wurfl/cache';
-
-		// Create WURFL Configuration
-		$wurflConfig = new WURFL_Configuration_InMemoryConfig();
-
-		// Set location of the WURFL File
-		$wurflConfig->wurflFile($resourcesDir.'/wurfl.zip');
-
-		// Set the match mode for the API ('performance' or 'accuracy')
-		$wurflConfig->matchMode('performance');
-
-		// Setup WURFL Persistence
-		$wurflConfig->persistence('file', array('dir' => $persistenceDir));
-
-		// Setup Caching
-		$wurflConfig->cache('file', array('dir' => $cacheDir, 'expiration' => 36000));
-
-		// Create a WURFL Manager Factory from the WURFL Configuration
-		$wurflManagerFactory = new WURFL_WURFLManagerFactory($wurflConfig);
-
-		// Create a WURFL Manager
-		/* @var $wurflManager WURFL_WURFLManager */
-		$wurflManager = $wurflManagerFactory->create();
-
-		$wurflInfo = $wurflManager->getWURFLInfo();
-		$requestingDevice = $wurflManager->getDeviceForHttpRequest($_SERVER);
-
-		if ($requestingDevice->id === 'generic_web_browser') {
-			$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['bn_adaptiveprofiles']);
-			$screenWidth = $extConf['defaultDesktopScreenWidth'] ? $extConf['defaultDesktopScreenWidth'] : $requestingDevice->getCapability('resolution_width');
+		$pathTo51Degrees = t3lib_extMgm::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+		include_once($pathTo51Degrees . '51Degrees.mobi.php');
+		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+		if ($_51d['ScreenPixelsWidth'] && $_51d['ScreenPixelsWidth'] !== 'Unknown') {
+			$screenWidth = $_51d['ScreenPixelsWidth'];
 		} else {
-			$screenWidth = $requestingDevice->getCapability('resolution_width');
+			$extConf = unserialize($GLOBALS['TYPO3_CONF_VARS']['EXT']['extConf']['bn_adaptiveprofiles']);
+			$screenWidth = $extConf['defaultScreenWidth'] ? $extConf['defaultScreenWidth'] : 1024;
 		}
+
+		return $screenWidth;
 	}
 }
 
