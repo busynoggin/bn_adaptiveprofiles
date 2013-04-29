@@ -4,7 +4,7 @@ if (!defined('TYPO3_MODE')) {
 }
 $TCA['tx_bnadaptiveprofiles_profile'] = array(
 	'ctrl' => array(
-		'title'     => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tx_bnadaptiveprofiles_profile',
+		'title'     => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tx_bnadaptiveprofiles_profile',
 		'label'     => 'name',
 		'tstamp'    => 'tstamp',
 		'crdate'    => 'crdate',
@@ -24,7 +24,7 @@ if ($filterContentElementsByProfile) {
 	t3lib_extMgm::addTCAcolumns('tt_content', array(
 		'bn_adaptiveprofiles' => array(
 			'exclude' => TRUE,
-			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tt_content.only_show_in_profiles',
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tt_content.only_show_in_profiles',
 			'config' => array(
 				'type' => 'select',
 				'foreign_table' => 'tx_bnadaptiveprofiles_profile',

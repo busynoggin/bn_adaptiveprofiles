@@ -12,7 +12,7 @@ $TCA['tx_bnadaptiveprofiles_profile'] = array(
 	'columns' => array(
 		'name' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tx_bnadaptiveprofiles_profile.name',
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tx_bnadaptiveprofiles_profile.name',
 			'config' => array(
 				'type' => 'input',
 				'size' => '30',
@@ -21,7 +21,7 @@ $TCA['tx_bnadaptiveprofiles_profile'] = array(
 		),
 		'minimum_width' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tx_bnadaptiveprofiles_profile.minimum_width',
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tx_bnadaptiveprofiles_profile.minimum_width',
 			'config' => array(
 				'type'     => 'input',
 				'size'     => '4',
@@ -37,7 +37,7 @@ $TCA['tx_bnadaptiveprofiles_profile'] = array(
 		),
 		'maximum_width' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tx_bnadaptiveprofiles_profile.maximum_width',
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tx_bnadaptiveprofiles_profile.maximum_width',
 			'config' => array(
 				'type'     => 'input',
 				'size'     => '4',
@@ -53,7 +53,7 @@ $TCA['tx_bnadaptiveprofiles_profile'] = array(
 		),
 		'is_default_profile' => array(
 			'exclude' => 0,
-			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xml:tx_bnadaptiveprofiles_profile.is_default_profile',
+			'label' => 'LLL:EXT:bn_adaptiveprofiles/Resources/Private/Language/locallang_db.xlf:tx_bnadaptiveprofiles_profile.is_default_profile',
 			'config' => array(
 				'type' => 'check',
 			)
