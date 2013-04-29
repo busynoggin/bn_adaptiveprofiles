@@ -1,6 +1,8 @@
 <?php
 
-class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
+namespace BusyNoggin\BnAdaptiveprofiles\Service;
+
+class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	protected $screenWidth = NULL;
 	protected $defaultProfile = NULL;

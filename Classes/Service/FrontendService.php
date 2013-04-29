@@ -1,6 +1,8 @@
 <?php
 
-class Tx_BnAdaptiveProfiles_Service_FrontendService implements t3lib_Singleton {
+namespace BusyNoggin\BnAdaptiveprofiles\Service;
+
+class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
 	 * Includes the JavaScript for adaptive profiles in the frontend output of the page.
