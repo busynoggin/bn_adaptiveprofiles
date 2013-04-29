@@ -11,8 +11,8 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * @return void
 	 */
 	public function includeAdapativeProfilesInPageRenderer() {
-		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['enable'] && (TYPO3_MODE === 'FE') && !t3lib_div::_GET('tx_bnadaptiveprofile')) {
-			$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
+		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['enable'] && (TYPO3_MODE === 'FE') && !\TYPO3\CMS\Core\Utility\GeneralUtility::_GET('tx_bnadaptiveprofile')) {
+			$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 
 			// Convert profiles to JSON
 			$profiles = $profileService->getProfiles();
@@ -31,7 +31,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 		$javaScriptPath = ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['javaScriptPath']) ? $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles']['javaScriptPath'] : 'EXT:bn_adaptiveprofiles/Resources/Public/JavaScript/application.js';
 
 	 		// Read application JS into string
-	 		$js .= t3lib_div::getUrl(t3lib_div::getFileAbsFileName($javaScriptPath));
+	 		$js .= \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($javaScriptPath));
 
 	 		// Add it all to the page renderer as inline JavaScript
 	 		$GLOBALS['TSFE']->getPageRenderer()->addJsInlineCode('bn_adaptiveprofiles_profiles', $js);
@@ -53,7 +53,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 			$ignoreArray = $params['ignore_array'];
 
 			if ($table === 'tt_content' && !$ignoreArray['bn_adaptiveprofiles']) {
-				$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
+				$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 				$currentProfile = $profileService->getCurrentProfile();
 
 				$query = ' AND (bn_adaptiveprofiles=\'0\' OR bn_adaptiveprofiles IS NULL OR bn_adaptiveprofiles=\'\' OR ' . $GLOBALS['TYPO3_DB']->listQuery('bn_adaptiveprofiles', $currentProfile['uid'], 'tt_content') . ') ';
@@ -73,7 +73,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 */
 	public function includeAdapativeProfilesInHash(&$params) {
 		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles_enable']) {
-			$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
+			$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 			$profiles = $profileService->getProfiles();
 			$currentProfile = $profileService->getCurrentProfile();
 
