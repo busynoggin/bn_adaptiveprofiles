@@ -7,168 +7,9 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 $_51d_meta_data = array(
-  'IsMobile' => array(
-    'Description' => 'The device\'s primary data connection is wireless and is designed to operate mostly from battery power (ie a mobile phone, smart phone or tablet).',
-    'List' => 'False',
-    'Values' => array(
-      'True' => array(
-        'Description' => 'This device is mobile.'
-        ),
-      'False' => array(
-        'Description' => 'This device isn\'t mobile.'
-        )
-    )
-  ),
-  'ScreenPixelsHeight' => array(
-    'Description' => 'The height of the screen in pixels.',
-    'List' => 'False',
-    'Values' => array(
-      '800' => array(),
-      '480' => array(),
-      '240' => array(),
-      '320' => array(),
-      '160' => array(),
-      '640' => array(),
-      '400' => array(),
-      'Unknown' => array(
-        'Description' => 'It is not known how high the screen is.'
-        ),
-      '220' => array(),
-      '128' => array(),
-      '854' => array(),
-      '208' => array(),
-      '260' => array(),
-      '360' => array(),
-      '416' => array(),
-      '432' => array(),
-      '200' => array(),
-      '760' => array(),
-      '176' => array(),
-      '275' => array(),
-      '1024' => array(),
-      '352' => array(),
-      '960' => array(),
-      '600' => array(),
-      '48' => array(),
-      '104' => array(),
-      '65' => array(),
-      '132' => array(),
-      '300' => array(),
-      '96' => array(),
-      '80' => array(),
-      '120' => array(),
-      '100' => array(),
-      '1280' => array(),
-      '205' => array(),
-      '192' => array(),
-      '276' => array(),
-      '427' => array(),
-      '256' => array(),
-      '720' => array(),
-      '266' => array(),
-      '440' => array(),
-      '864' => array(),
-      '130' => array(),
-      '148' => array(),
-      '101' => array(),
-      '95' => array(),
-      '170' => array(),
-      '144' => array(),
-      '64' => array(),
-      '67' => array(),
-      '768' => array(),
-      '127' => array(),
-      '68' => array(),
-      '60' => array(),
-      '40' => array(),
-      '112' => array(),
-      '272' => array(),
-      '143' => array(),
-      '323' => array(),
-      '345' => array(),
-      '292' => array(),
-      '1200' => array(),
-      '544' => array()
-    )
-  ),
-  'ScreenPixelsWidth' => array(
-    'Description' => 'The width of the screen in pixels.',
-    'List' => 'False',
-    'Values' => array(
-      '480' => array(),
-      '320' => array(),
-      '240' => array(),
-      '128' => array(),
-      '360' => array(),
-      'Unknown' => array(
-        'Description' => 'It is not known how wide the screen is.'
-        ),
-      '176' => array(),
-      '120' => array(),
-      '208' => array(),
-      '432' => array(),
-      '352' => array(),
-      '440' => array(),
-      '345' => array(),
-      '640' => array(),
-      '220' => array(),
-      '400' => array(),
-      '600' => array(),
-      '800' => array(),
-      '160' => array(),
-      '272' => array(),
-      '1024' => array(),
-      '84' => array(),
-      '540' => array(),
-      '96' => array(),
-      '132' => array(),
-      '1280' => array(),
-      '101' => array(),
-      '144' => array(),
-      '90' => array(),
-      '111' => array(),
-      '64' => array(),
-      '172' => array(),
-      '180' => array(),
-      '768' => array(),
-      '720' => array(),
-      '854' => array(),
-      '130' => array(),
-      '116' => array(),
-      '80' => array(),
-      '200' => array(),
-      '104' => array(),
-      '150' => array(),
-      '960' => array(),
-      '98' => array(),
-      '1200' => array(),
-      '127' => array(),
-      '92' => array(),
-      '65' => array(),
-      '95' => array(),
-      '115' => array(),
-      '94' => array(),
-      '112' => array(),
-      '232' => array(),
-      '228' => array(),
-      '280' => array(),
-      '177' => array(),
-      '256' => array(),
-      '824' => array(),
-      '37' => array(),
-      '1920' => array()
-    )
-  ),
   'LayoutEngine' => array(
     'Description' => 'The underlying technology behind the web browser.',
     'URL' => 'http://en.wikipedia.org/wiki/Web_browser_engine',
@@ -180,9 +21,6 @@ $_51d_meta_data = array(
       'Mango' => array(
         'Description' => 'Used on v4 and v5 BlackberryOS (not to be confused with Windows Phone OS 7.5).'
         ),
-      'Presto' => array(
-        'Description' => 'The browser uses the Presto engine - nearly always used by Opera made browsers.'
-        ),
       'Trident' => array(
         'Description' => 'The browser uses the Trident engine - nearly always IE and other Microsoft made browsers.'
         ),
@@ -191,6 +29,9 @@ $_51d_meta_data = array(
         ),
       'Netfront' => array(
         'Description' => 'The browser uses the Netfront engine - used by the Access Netfront browser.'
+        ),
+      'Presto' => array(
+        'Description' => 'The browser uses the Presto engine - nearly always used by Opera made browsers.'
         ),
       'MotoWebkit' => array(
         'Description' => 'Used by Motorola based devices with Mobile Linux platform, browser name is Unknown'
@@ -233,7 +74,7 @@ $_51d_meta_data = array(
     )
   ),
   'AnimationTiming' => array(
-    'Description' => 'Beta property. Indicates that the browser supports \'window.requestAnimationFrame()\'.',
+    'Description' => 'Indicates that the browser supports \'window.requestAnimationFrame()\'.',
     'URL' => 'http://www.w3.org/TR/animation-timing/',
     'List' => 'False',
     'Values' => array(
@@ -243,7 +84,7 @@ $_51d_meta_data = array(
     )
   ),
   'BlobBuilder' => array(
-    'Description' => 'Beta property. Indicates that the browser fully supports BlobBuilder, containing a BlobBuilder interface, a FileSaver interface, a FileWriter interface, and a FileWriterSync interface.',
+    'Description' => 'Indicates that the browser fully supports BlobBuilder, containing a BlobBuilder interface, a FileSaver interface, a FileWriter interface, and a FileWriterSync interface.',
     'URL' => 'http://dev.w3.org/2009/dap/file-system/file-writer.html#the-blobbuilder-interface',
     'List' => 'False',
     'Values' => array(
@@ -253,7 +94,7 @@ $_51d_meta_data = array(
     )
   ),
   'CssBackground' => array(
-    'Description' => 'Beta property. Indicates if the browser supports CSS3 backgrounds. This allows styling of the border, the background of the box. The box may be given a shadow effect.',
+    'Description' => 'Indicates if the browser supports CSS3 backgrounds. This allows styling of the border, the background of the box. The box may be given a shadow effect.',
     'URL' => 'http://www.w3.org/TR/css3-background/',
     'List' => 'False',
     'Values' => array(
@@ -263,7 +104,7 @@ $_51d_meta_data = array(
     )
   ),
   'CssBorderImage' => array(
-    'Description' => 'Beta property. Indicates if the browser supports Border Images, allowing decoration of the border around a box.',
+    'Description' => 'Indicates if the browser supports Border Images, allowing decoration of the border around a box.',
     'URL' => 'http://www.w3.org/TR/css3-background/',
     'List' => 'False',
     'Values' => array(
@@ -273,17 +114,16 @@ $_51d_meta_data = array(
     )
   ),
   'CssCanvas' => array(
-    'Description' => 'Beta property. Indicates if the browser can draw CSS images into a Canvas.',
+    'Description' => 'Indicates if the browser can draw CSS images into a Canvas.',
     'URL' => 'http://www.webkit.org/blog/176/css-canvas-drawing/',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
-      'Unknown' => array(),
-      'True' => array()
+      'Unknown' => array()
     )
   ),
   'CssColor' => array(
-    'Description' => 'Beta property. Indicates if the browser supports CSS 3 Color, allowing author control of the foreground colour anf opacity of an element.',
+    'Description' => 'Indicates if the browser supports CSS 3 Color, allowing author control of the foreground colour anf opacity of an element.',
     'URL' => 'http://www.w3.org/TR/css3-color/',
     'List' => 'False',
     'Values' => array(
@@ -293,17 +133,16 @@ $_51d_meta_data = array(
     )
   ),
   'CssFlexbox' => array(
-    'Description' => 'Beta property. Indicates if the browser supports flexbox, allowing automatic reordering of elements. Useful for GUI design.',
+    'Description' => 'Indicates if the browser supports flexbox, allowing automatic reordering of elements. Useful for GUI design.',
     'URL' => 'http://www.w3.org/TR/css3-flexbox/',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
-      'Unknown' => array(),
-      'True' => array()
+      'Unknown' => array()
     )
   ),
   'CssFont' => array(
-    'Description' => 'Beta property. Indicates if CSS3 fonts are supported, including non standard fonts (@font-face).',
+    'Description' => 'Indicates if CSS3 fonts are supported, including non standard fonts (@font-face).',
     'URL' => 'http://www.w3.org/TR/css3-fonts/',
     'List' => 'False',
     'Values' => array(
@@ -313,7 +152,7 @@ $_51d_meta_data = array(
     )
   ),
   'CssMediaQueries' => array(
-    'Description' => 'Beta property. Indicates if the device supports MediaQueries for dynamic CSS.',
+    'Description' => 'Indicates if the device supports MediaQueries for dynamic CSS.',
     'URL' => 'http://www.w3.org/TR/css3-mediaqueries/',
     'List' => 'False',
     'Values' => array(
@@ -323,7 +162,7 @@ $_51d_meta_data = array(
     )
   ),
   'CssMinMax' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the CSS \'min-width\'  and \'max-width\' properties.',
+    'Description' => 'Indicates if the browser supports the CSS \'min-width\'  and \'max-width\' properties.',
     'URL' => 'http://www.w3.org/TR/CSS21/visudet.html#min-max-widths',
     'List' => 'False',
     'Values' => array(
@@ -332,28 +171,8 @@ $_51d_meta_data = array(
       'False' => array()
     )
   ),
-  'CssOverflow' => array(
-    'Description' => 'Beta property. Indicates if the browser supports overflowing of clipped blocks (blocks have scroll mechanisms).',
-    'URL' => 'http://www.w3.org/TR/CSS2/visufx.html',
-    'List' => 'False',
-    'Values' => array(
-      'False' => array(),
-      'Unknown' => array(),
-      'True' => array()
-    )
-  ),
-  'CssPosition' => array(
-    'Description' => 'Beta property. Indicates if the browser supports CSS position, allowing for different box placement algorithms (static, relative, absolute, fixed).',
-    'URL' => 'http://www.w3.org/TR/CSS21/visuren.html#choose-position',
-    'List' => 'False',
-    'Values' => array(
-      'True' => array(),
-      'False' => array(),
-      'Unknown' => array()
-    )
-  ),
   'CssText' => array(
-    'Description' => 'Beta property. Indicates if the browser supports CSS 3 text, allowing better support for non-Latin alphabets and grammar.',
+    'Description' => 'Indicates if the browser supports CSS 3 text, allowing better support for non-Latin alphabets and grammar.',
     'URL' => 'http://www.w3.org/TR/css3-text/',
     'List' => 'False',
     'Values' => array(
@@ -363,7 +182,7 @@ $_51d_meta_data = array(
     )
   ),
   'CssTransforms' => array(
-    'Description' => 'Beta property. Indicates if the browser supports 2D transform in CSS 3.',
+    'Description' => 'Indicates if the browser supports 2D transform in CSS 3.',
     'URL' => 'http://www.w3.org/TR/css3-2d-transforms/',
     'List' => 'False',
     'Values' => array(
@@ -372,19 +191,9 @@ $_51d_meta_data = array(
       'False' => array()
     )
   ),
-  'CssUI' => array(
-    'Description' => 'Beta property. Indicates if the browser supports various CSS UI stylings.',
-    'URL' => 'http://www.w3.org/TR/css3-ui/',
-    'List' => 'False',
-    'Values' => array(
-      'True' => array(),
-      'Unknown' => array(),
-      'False' => array()
-    )
-  ),
-  'DataSet' => array(
-    'Description' => 'Beta property. Indicates if the browser allows custom data attributes for th a site\'s own use. An attribute with the form \'data-*\' will not be interpreted by the browser engine.',
-    'URL' => 'http://www.w3.org/TR/html5/elements.html#embedding-custom-non-visible-data-with-the-data-attributes',
+  'CssOverflow' => array(
+    'Description' => 'Indicates if the browser supports overflowing of clipped blocks (blocks have scroll mechanisms).',
+    'URL' => 'http://www.w3.org/TR/CSS2/visufx.html',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
@@ -392,8 +201,18 @@ $_51d_meta_data = array(
       'True' => array()
     )
   ),
+  'CssPosition' => array(
+    'Description' => 'Indicates if the browser supports CSS position, allowing for different box placement algorithms (static, relative, absolute, fixed).',
+    'URL' => 'http://www.w3.org/TR/CSS21/visuren.html#choose-position',
+    'List' => 'False',
+    'Values' => array(
+      'True' => array(),
+      'False' => array(),
+      'Unknown' => array()
+    )
+  ),
   'DataUrl' => array(
-    'Description' => 'Beta property. Indicates if the browser allows encoded data to be contained in a url.',
+    'Description' => 'Indicates if the browser allows encoded data to be contained in a url.',
     'URL' => 'http://www.ietf.org/rfc/rfc2397',
     'List' => 'False',
     'Values' => array(
@@ -402,7 +221,7 @@ $_51d_meta_data = array(
     )
   ),
   'DeviceOrientation' => array(
-    'Description' => 'Beta property. Indicates if the browser supports DOM events for device orientation (deviceorientation, devicemotion, compassneedscalibration).',
+    'Description' => 'Indicates if the browser supports DOM events for device orientation (deviceorientation, devicemotion, compassneedscalibration).',
     'URL' => 'http://www.w3.org/TR/orientation-event/',
     'List' => 'False',
     'Values' => array(
@@ -412,7 +231,7 @@ $_51d_meta_data = array(
     )
   ),
   'FileReader' => array(
-    'Description' => 'Beta property. Indicates if the browser supports file reading with events to show progress and errors.',
+    'Description' => 'Indicates if the browser supports file reading with events to show progress and errors.',
     'URL' => 'http://www.w3.org/TR/FileAPI/',
     'List' => 'False',
     'Values' => array(
@@ -422,7 +241,7 @@ $_51d_meta_data = array(
     )
   ),
   'FileSaver' => array(
-    'Description' => 'Beta property. Indicates if the browser supports Blobs to be saved to client machines with events to show progress and errors. Note that this property only shows browser support, not if the user allows it.',
+    'Description' => 'Indicates if the browser supports Blobs to be saved to client machines with events to show progress and errors. Note that this property only shows browser support, not if the user allows it.',
     'URL' => 'http://www.w3.org/TR/file-writer-api/#idl-def-FileSaver',
     'List' => 'False',
     'Values' => array(
@@ -430,17 +249,28 @@ $_51d_meta_data = array(
       'Unknown' => array()
     )
   ),
-  'FileWriter' => array(
-    'Description' => 'Beta property. Indicates if the browser supprts files to be saved to client machines with events to show progress and errors. Note that this property only shows browser support, not if the user allows it.',
-    'URL' => 'http://www.w3.org/TR/file-writer-api/',
+  'CssUI' => array(
+    'Description' => 'Indicates if the browser supports various CSS UI stylings.',
+    'URL' => 'http://www.w3.org/TR/css3-ui/',
+    'List' => 'False',
+    'Values' => array(
+      'True' => array(),
+      'Unknown' => array(),
+      'False' => array()
+    )
+  ),
+  'DataSet' => array(
+    'Description' => 'Indicates if the browser allows custom data attributes for th a site\'s own use. An attribute with the form \'data-*\' will not be interpreted by the browser engine.',
+    'URL' => 'http://www.w3.org/TR/html5/elements.html#embedding-custom-non-visible-data-with-the-data-attributes',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
-      'Unknown' => array()
+      'Unknown' => array(),
+      'True' => array()
     )
   ),
   'FormData' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the FormData object.',
+    'Description' => 'Indicates if the browser supports the FormData object.',
     'URL' => 'http://www.w3.org/TR/XMLHttpRequest/#interface-formdata',
     'List' => 'False',
     'Values' => array(
@@ -450,7 +280,7 @@ $_51d_meta_data = array(
     )
   ),
   'Fullscreen' => array(
-    'Description' => 'Beta property. Indicates whether the browser supports fullscreen requests.',
+    'Description' => 'Indicates whether the browser supports fullscreen requests.',
     'URL' => 'http://dvcs.w3.org/hg/fullscreen/raw-file/tip/Overview.html',
     'List' => 'False',
     'Values' => array(
@@ -460,7 +290,7 @@ $_51d_meta_data = array(
     )
   ),
   'GeoLocation' => array(
-    'Description' => 'Beta property. Indicates if the browser supports location finding. Note that the browser may be capable but the user may not want to give their position. Similar to the 51Degrees.mobi property \'W3C api\' value in the \'JavascriptPreferredGeoLocApi\' property.',
+    'Description' => 'Indicates if the browser supports location finding. Note that the browser may be capable but the user may not want to give their position. Similar to the 51Degrees.mobi property \'W3C api\' value in the \'JavascriptPreferredGeoLocApi\' property.',
     'URL' => 'http://www.w3.org/TR/geolocation-API/',
     'List' => 'False',
     'Values' => array(
@@ -470,7 +300,7 @@ $_51d_meta_data = array(
     )
   ),
   'History' => array(
-    'Description' => 'Beta property. Indicates if the browser stores the session history for a webpage to use.',
+    'Description' => 'Indicates if the browser stores the session history for a webpage to use.',
     'URL' => 'http://www.whatwg.org/specs/web-apps/current-work/multipage/history.html',
     'List' => 'False',
     'Values' => array(
@@ -480,8 +310,27 @@ $_51d_meta_data = array(
     )
   ),
   'Html-Media-Capture' => array(
-    'Description' => 'Beta property. Indicates if the browser can use media inputs (webcam, microphones etc) in script and as an input for forms (eg. &lt;input type="file" accept="image/*" id="capture"&gt; would prompt image capturing software to open).',
+    'Description' => 'Indicates if the browser can use media inputs (webcam, microphones etc) in script and as an input for forms (eg. &lt;input type="file" accept="image/*" id="capture"&gt; would prompt image capturing software to open).',
     'URL' => 'http://www.w3.org/TR/html-media-capture/',
+    'List' => 'False',
+    'Values' => array(
+      'False' => array(),
+      'Unknown' => array(),
+      'True' => array()
+    )
+  ),
+  'PostMessage' => array(
+    'Description' => 'Indicates if the browser supports messages between different documents.',
+    'URL' => 'http://www.w3.org/TR/webmessaging/',
+    'List' => 'False',
+    'Values' => array(
+      'True' => array(),
+      'Unknown' => array()
+    )
+  ),
+  'FileWriter' => array(
+    'Description' => 'Indicates if the browser supprts files to be saved to client machines with events to show progress and errors. Note that this property only shows browser support, not if the user allows it.',
+    'URL' => 'http://www.w3.org/TR/file-writer-api/',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
@@ -489,7 +338,7 @@ $_51d_meta_data = array(
     )
   ),
   'Html5' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the new markup in HTML 5.',
+    'Description' => 'Indicates if the browser supports the new markup in HTML 5.',
     'URL' => 'http://www.w3.org/TR/html5/',
     'List' => 'False',
     'Values' => array(
@@ -499,7 +348,7 @@ $_51d_meta_data = array(
     )
   ),
   'Iframe' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the Iframe element.',
+    'Description' => 'Indicates if the browser supports the Iframe element.',
     'URL' => 'http://dev.w3.org/html5/spec/the-iframe-element.html#the-iframe-element',
     'List' => 'False',
     'Values' => array(
@@ -509,7 +358,7 @@ $_51d_meta_data = array(
     )
   ),
   'IndexedDB' => array(
-    'Description' => 'Beta property. Indicates if the browser supports an indexed local database.',
+    'Description' => 'Indicates if the browser supports an indexed local database.',
     'URL' => 'http://www.w3.org/TR/IndexedDB/',
     'List' => 'False',
     'Values' => array(
@@ -519,7 +368,7 @@ $_51d_meta_data = array(
     )
   ),
   'Json' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the JSON object.',
+    'Description' => 'Indicates if the browser supports the JSON object.',
     'URL' => 'http://es5.github.com/x15.12.html',
     'List' => 'False',
     'Values' => array(
@@ -528,18 +377,8 @@ $_51d_meta_data = array(
     )
   ),
   'Masking' => array(
-    'Description' => 'Beta property. Indicates if filter can be applied to images to change their shape or add visual effects (eg, grayscale, fading).		',
+    'Description' => 'Indicates if filter can be applied to images to change their shape or add visual effects (eg, grayscale, fading).		',
     'URL' => 'http://www.webkit.org/blog/181/css-masks/',
-    'List' => 'False',
-    'Values' => array(
-      'True' => array(),
-      'Unknown' => array(),
-      'False' => array()
-    )
-  ),
-  'PostMessage' => array(
-    'Description' => 'Beta property. Indicates if the browser supports messages between different documents.',
-    'URL' => 'http://www.w3.org/TR/webmessaging/',
     'List' => 'False',
     'Values' => array(
       'True' => array(),
@@ -547,7 +386,7 @@ $_51d_meta_data = array(
     )
   ),
   'Progress' => array(
-    'Description' => 'Beta property. Indicates if the browser supports progress reports, such as with HTTP requests.',
+    'Description' => 'Indicates if the browser supports progress reports, such as with HTTP requests.',
     'URL' => 'http://www.w3.org/TR/progress-events/',
     'List' => 'False',
     'Values' => array(
@@ -567,7 +406,7 @@ $_51d_meta_data = array(
     )
   ),
   'Selector' => array(
-    'Description' => 'Beta property. Indicates if the browser supports Selectors, used for more consice searching in DOM.',
+    'Description' => 'Indicates if the browser supports Selectors, used for more consice searching in DOM.',
     'URL' => 'http://www.w3.org/TR/selectors-api2/',
     'List' => 'False',
     'Values' => array(
@@ -577,7 +416,7 @@ $_51d_meta_data = array(
     )
   ),
   'Svg' => array(
-    'Description' => 'Beta property. Indicates if the browser supports SVG (scalable vector graphics), useful for 2D animations and applications as all objects within the SVG can be accessed via the DOM and can be assigned event listeners.',
+    'Description' => 'Indicates if the browser supports SVG (scalable vector graphics), useful for 2D animations and applications as all objects within the SVG can be accessed via the DOM and can be assigned event listeners.',
     'URL' => 'http://www.w3.org/TR/SVG/',
     'List' => 'False',
     'Values' => array(
@@ -587,7 +426,7 @@ $_51d_meta_data = array(
     )
   ),
   'TouchEvents' => array(
-    'Description' => 'Beta property. Indicates if the browser supports multiple touch events happening simultaneously.',
+    'Description' => 'Indicates if the browser supports multiple touch events happening simultaneously.',
     'URL' => 'http://www.w3.org/TR/touch-events/',
     'List' => 'False',
     'Values' => array(
@@ -597,16 +436,17 @@ $_51d_meta_data = array(
     )
   ),
   'Track' => array(
-    'Description' => 'Beta property. Indicates if the browser supports text tracks being played with media, eg subtitles, captions.',
+    'Description' => 'Indicates if the browser supports text tracks being played with media, eg subtitles, captions.',
     'URL' => 'http://www.whatwg.org/specs/web-apps/current-work/multipage/the-video-element.html#the-track-element',
     'List' => 'False',
     'Values' => array(
       'False' => array(),
-      'Unknown' => array()
+      'Unknown' => array(),
+      'True' => array()
     )
   ),
   'Video' => array(
-    'Description' => 'Beta property. Indicates if the borwser supports the video element.',
+    'Description' => 'Indicates if the browser supports the video element.',
     'URL' => 'http://www.whatwg.org/specs/web-apps/current-work/multipage/the-video-element.html',
     'List' => 'False',
     'Values' => array(
@@ -616,7 +456,7 @@ $_51d_meta_data = array(
     )
   ),
   'Viewport' => array(
-    'Description' => 'Beta property. Indicates if the browser supports Viewport, to give control over view size and resolution.',
+    'Description' => 'Indicates if the browser supports Viewport, to give control over view size and resolution.',
     'URL' => 'http://www.w3.org/TR/mwabp/#bp-viewport',
     'List' => 'False',
     'Values' => array(
@@ -624,8 +464,16 @@ $_51d_meta_data = array(
       'Unknown' => array()
     )
   ),
+  'CssImages' => array(
+    'Description' => 'Indicates if CSS3 images are supported, allowing for fallback images, gradients and other effects.',
+    'URL' => 'http://dev.w3.org/csswg/css3-images/',
+    'List' => 'False',
+    'Values' => array(
+      'False' => array()
+    )
+  ),
   'WebWorkers' => array(
-    'Description' => 'Beta property. Indicates if the browser supports background workers in javascript.',
+    'Description' => 'Indicates if the browser supports background workers in javascript.',
     'URL' => 'http://www.w3.org/TR/workers/',
     'List' => 'False',
     'Values' => array(
@@ -635,7 +483,7 @@ $_51d_meta_data = array(
     )
   ),
   'Xhr2' => array(
-    'Description' => 'Beta property. Indicates if the browser supports client - server communication with XmlHttpRequests.',
+    'Description' => 'Indicates if the browser supports client - server communication with XmlHttpRequests.',
     'URL' => 'http://www.w3.org/TR/XMLHttpRequest/',
     'List' => 'False',
     'Values' => array(
@@ -645,7 +493,7 @@ $_51d_meta_data = array(
     )
   ),
   'Canvas' => array(
-    'Description' => 'Beta property. Indicates if the browser supports the canvas element, useful for drawing with javscript.',
+    'Description' => 'Indicates if the browser supports the canvas element, useful for drawing with javscript.',
     'URL' => 'http://www.whatwg.org/specs/web-apps/current-work/multipage/the-canvas-element.html',
     'List' => 'False',
     'Values' => array(
@@ -654,11 +502,163 @@ $_51d_meta_data = array(
       'False' => array()
     )
   ),
-  'CssImages' => array(
-    'Description' => 'Beta property. Indicates if CSS3 images are supported, allowing for fallback images, gradients and other effects.',
-    'URL' => 'http://dev.w3.org/csswg/css3-images/',
+  'IsMobile' => array(
+    'Description' => 'The device\'s primary data connection is wireless and is designed to operate mostly from battery power (ie a mobile phone, smart phone or tablet).',
     'List' => 'False',
     'Values' => array(
-      'False' => array()
+      'True' => array(
+        'Description' => 'This device is mobile.'
+        ),
+      'False' => array(
+        'Description' => 'This device isn\'t mobile.'
+        )
     )
-  ));
+  ),
+  'ScreenPixelsWidth' => array(
+    'Description' => 'The width of the screen in pixels.',
+    'List' => 'False',
+    'Values' => array(
+      '400' => array(),
+      '320' => array(),
+      '480' => array(),
+      '240' => array(),
+      '128' => array(),
+      '360' => array(),
+      '176' => array(),
+      '120' => array(),
+      'Unknown' => array(
+        'Description' => 'It is not known how wide the screen is.'
+        ),
+      '208' => array(),
+      '432' => array(),
+      '352' => array(),
+      '440' => array(),
+      '345' => array(),
+      '640' => array(),
+      '800' => array(),
+      '220' => array(),
+      '600' => array(),
+      '160' => array(),
+      '272' => array(),
+      '1024' => array(),
+      '84' => array(),
+      '540' => array(),
+      '96' => array(),
+      '132' => array(),
+      '101' => array(),
+      '144' => array(),
+      '90' => array(),
+      '111' => array(),
+      '1280' => array(),
+      '64' => array(),
+      '768' => array(),
+      '180' => array(),
+      '200' => array(),
+      '720' => array(),
+      '854' => array(),
+      '130' => array(),
+      '116' => array(),
+      '80' => array(),
+      '960' => array(),
+      '98' => array(),
+      '115' => array(),
+      '94' => array(),
+      '112' => array(),
+      '232' => array(),
+      '228' => array(),
+      '280' => array(),
+      '92' => array(),
+      '128128' => array(),
+      '177' => array(),
+      '824' => array(),
+      '37' => array(),
+      '230' => array(),
+      '1920' => array(),
+      '758' => array(),
+      '1080' => array(),
+      '1200' => array(),
+      '900' => array(),
+      '279' => array(),
+      '1600' => array(),
+      '40' => array(),
+      '1536' => array()
+    )
+  ),
+  'ScreenPixelsHeight' => array(
+    'Description' => 'The height of the screen in pixels.',
+    'List' => 'False',
+    'Values' => array(
+      '800' => array(),
+      '480' => array(),
+      '240' => array(),
+      '320' => array(),
+      '160' => array(),
+      '640' => array(),
+      '400' => array(),
+      '220' => array(),
+      '128' => array(),
+      '854' => array(),
+      'Unknown' => array(
+        'Description' => 'It is not known how high the screen is.'
+        ),
+      '208' => array(),
+      '260' => array(),
+      '360' => array(),
+      '416' => array(),
+      '432' => array(),
+      '200' => array(),
+      '176' => array(),
+      '275' => array(),
+      '1024' => array(),
+      '352' => array(),
+      '960' => array(),
+      '600' => array(),
+      '48' => array(),
+      '65' => array(),
+      '132' => array(),
+      '1280' => array(),
+      '300' => array(),
+      '96' => array(),
+      '80' => array(),
+      '120' => array(),
+      '100' => array(),
+      '205' => array(),
+      '192' => array(),
+      '420' => array(),
+      '427' => array(),
+      '256' => array(),
+      '266' => array(),
+      '440' => array(),
+      '864' => array(),
+      '130' => array(),
+      '148' => array(),
+      '101' => array(),
+      '95' => array(),
+      '144' => array(),
+      '64' => array(),
+      '67' => array(),
+      '768' => array(),
+      '60' => array(),
+      '40' => array(),
+      '112' => array(),
+      '272' => array(),
+      '143' => array(),
+      '323' => array(),
+      '345' => array(),
+      '292' => array(),
+      '1200' => array(),
+      '544' => array(),
+      '1080' => array(),
+      '1920' => array(),
+      '1600' => array(),
+      '533' => array(),
+      '728' => array(),
+      '1440' => array(),
+      '2560' => array(),
+      '1028' => array(),
+      '1366' => array(),
+      '2048' => array()
+    )
+  ),
+'DatasetName' => 'Lite',
+'Date' => '10/04/2013');

@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -44,2435 +37,806 @@ function E92($target, $test, $ls) {
 function _H92($useragent) {
   $ls = PHP_INT_MAX;
   $dl = array();
-  $ua = 'ZTE-F102 H3G/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-STX2/MC.40; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(34682,118820,47111,841, $ua);
   }
-  $ua = 'ZTE-F102(Rwanda TIGO)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-STX2/MC.40 POLARIS/6.15 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(322334,118820,133670,841, $ua);
   }
-  $ua = 'ZTE-F102(Rwanda TIGO)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-STX2/MC.40 POLARIS/6.15 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(322334,118820,133670,841, $ua);
   }
-  $ua = 'ZTE-F102/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX17/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(210963,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F102i/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX30/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(389537,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F102/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX30/1.0 Profile/MISP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(389537,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F102 H3G/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-31/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.106 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(389537,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F102 H3G/2.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX30i/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(389537,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F102 H3G/2.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TM-150';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13354,17017,3976,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-F160/1.3.0; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.20822; U; en-US) Opera 9.50';
+  $ua = 'SHARP-TM-200';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4732,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-R225/ES-ATT-USA-P103D13V1.1.5 OBIGO/Q03C WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15099,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-R225/ES-ATT-USA-P103D13V1.1.5 OBIGO/Q03C WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX12';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15099,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-R225/ES-ATT-USA-P103D13V1.1.7 OBIGO/Q03C WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-L15';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15099,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-R225/ES-ATT-USA-P103D13V1.1.7 OBIGO/Q03C WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX13';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15099,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-F107(3UK)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-A15';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12306,17017,3976,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-F107(3UK)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX23/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12306,17017,3976,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281/Obigo/Q03';
+  $ua = 'SHARP-TQ-GX32i';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_ENG_EN_P107A3V1.0.7 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GZ1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-SFR-343/SFR_FR_P107A3V1.0.0 Obigo/Q03';
+  $ua = 'SHARP-TQ-GZ100T';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-LeTactile-Orange/ORANGE_OFR_FR_P107A3V1.0.8 Obigo/Q03C';
+  $ua = 'SHARP-TQ-V750';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_OSP_SP_P107A3V1.0.3 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX-i98';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_OSP_SP_P107A3V1.0.7 Obigo/Q03C';
+  $ua = 'SHARP-Z800';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_ENG_EN_P107A3V1.0.4 Obigo/Q03C';
+  $ua = 'SHARP SH6017D / Obigo Browser Q03C';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(362029,21108,117741,841, $ua);
   }
-  $ua = 'ZTE-G-N281-SFR-343/SFR_FR_P107A3V1.0.0 Obigo/Q03, ZTE-G-N281-SFR-343/SFR_FR_P107A3V1.0.0 Obigo/Q03';
+  $ua = 'SHARP-TM-100/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-CUTE-Virgin/ Obigo/Q03';
+  $ua = 'SHARP-TM-150/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.2.101 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_ENG_EN_P107A3V1.0.8 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TM-200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-LeTactile-Orange/ORANGE_OFR_FR_P107A3V1.0.7 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-T15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281/Obigo/Q03 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-L15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.111 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-LeTactile-Orange/ORANGE_OFR_FR_P107A3V1.0.4 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX-A15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-Miami-Orange/ORANGE_ENG_EN_P107A3V1.0.8 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX-E30/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.106 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-N281-CUTE-Bouygues/BYTEL_FR_P107A3V1.0.3 Obigo/Q03';
+  $ua = 'SHARP-TQ-GX23/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13319,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X991-Rio-orange/X991_V1_Z2_FRES_D18F108 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX32/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.105 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14062,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X991-Rio-orange/X991_V1_Z2_FRES_D18F109 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GZ1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.103 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14062,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X991-Rio-orange/X991_V1_Z2_FRES_D18F109 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GZ100S/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.105 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14062,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X991-Rio-orange/X991_V1_Z2_FRES_D18F108 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-F200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14062,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X991-Rio-orange/X991_V1_Z3 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX20/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14062,17017,3807,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-E520/1.0 SMIT-Browser/2.0.0';
+  $ua = 'SHARP-TQ-GX20/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13510,5282,3579,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-E520/1.0 SMIT-Browser/2.0.0 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX20/1.1c Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13510,5282,3579,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100(Zimbabwe)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX20/1.0c Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100(Zimbabwe)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX20/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.103 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100/0.1 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX20N/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100(Jordan Orange)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX-21/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100(Ghana)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX-21/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(265577,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100(DGT)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX25/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.106 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(116229,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100/1.0 ACS-NF/3.4 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX25/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.109 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(116229,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F100/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.110 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12772,17017,3976,18092, $ua);
+    $dl[] = array(330403,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F160-Orange/4.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(330403,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-F160(Angola)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP/1.1/SH9020C/SHC001 Mozilla/5.00 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(360661,21108,22353,841, $ua);
   }
-  $ua = 'ZTE-F160(Uganda)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX10/0.0 UP.Browser/6.1.0.1.148 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(441306,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-F160(Brazil_VIVO)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX10/0.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.2.129 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(441306,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-F160/1.3.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX10/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.101 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(441306,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-F160/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX10i/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.106 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14768,17017,4223,18092, $ua);
+    $dl[] = array(441306,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-T100/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX10i/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.d.2 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15599,17017,3976,18092, $ua);
+    $dl[] = array(441306,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-T100Life/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0  Novarra-Vision/8.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15599,17017,3976,18092, $ua);
+    $dl[] = array(319708,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-T100/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15599,17017,3976,18092, $ua);
+    $dl[] = array(319708,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-T100/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.101 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15599,17017,3976,18092, $ua);
+    $dl[] = array(319708,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-T100(Life)/1.0 NetFront/3.4 QTV5.1 Profile /MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP/1.0/SH9010C/SHC001 Mozilla/4.08 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15599,17017,3976,18092, $ua);
+    $dl[] = array(365491,21108,22353,841, $ua);
   }
-  $ua = 'ZTE-G_R221/WAP2.0 Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX29/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.h.1.100 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17692,17017,17470,18092, $ua);
+    $dl[] = array(368298,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G_R221/WAP2.0, ZTE-G_R221/WAP2.0';
+  $ua = 'SHARP/1.1/SH1810C/SHC001 Mozilla/5.00 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17692,17017,17470,18092, $ua);
+    $dl[] = array(217136,21108,22353,841, $ua);
   }
-  $ua = 'ZTE-G_R221/WAP2.0';
+  $ua = 'SHARP-TQ-GX27/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17692,17017,17470,18092, $ua);
+    $dl[] = array(234002,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-JACK 3G/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX27/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.h.2 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13014,17017,4223,18092, $ua);
+    $dl[] = array(234002,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-E821(Econet)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX1/1.0 UP.Browser/6.1.0.5.102 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13014,17017,4223,18092, $ua);
+    $dl[] = array(241863,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-Jack 3G-Orange/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX1/0.0 UP.Browser/6.1.0.3.118 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13014,17017,4223,18092, $ua);
+    $dl[] = array(241863,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-Sydney-Orange/EFS-EE-ORG-P107A20V1.0.3 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-GX1/0.0 UP.Browser/6.1.b.330 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13033,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-Sydney-Orange/EFS-EE-ORG-P107A20V1.0.5 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'SHARP-TQ-V750/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.d.1 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13033,17017,3807,18092, $ua);
+    $dl[] = array(241863,116222,194008,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z13_EN_D18F101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP SH7110C / Obigo Browser 2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(365851,21108,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990-VIVO/VIVO_X990_V1.0.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX20';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(265577,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z14_PT_D18F100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX20i';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(265577,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z21_ES_D18F103 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX-21';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(265577,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990-VIVO/X990_V2_Z10_PT_D18F100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-31';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(389537,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990-VIVO/VIVO_X990_V1.0.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX30i';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(389537,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z15_PT_D18F108 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX-31i';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(389537,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X990-VIVO/X990_V2_Z10_PT_D18F100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SharpWXT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(275933,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z18_EN_D18F100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
+  $ua = 'SharpWXT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 UP.Browser/7.0.2.3.119 (GUI) MMP/2.0 Push/PO';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(275933,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-G-X990/X990_V2_Z14_PT_D18F100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX22S/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(13929,17017,3807,18092, $ua);
+    $dl[] = array(441378,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10NL_GD_B07A202 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX22/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441378,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15ES_FS_B07A104_ORANGE Obigo/Q03C';
+  $ua = 'SHARP-TQ-GZ200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441522,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10UK_GD_B07A201 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GZ200S/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441522,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10UK_GD_B07A202 Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX-T300/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.f.1.103 (GUI) MMP/2.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(237164,116222,18014,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15UK_FS_B07A105_ORANGE Obigo/Q03C';
+  $ua = 'SharpWXT81/SHS001/1.0 Browser/UP.Browser/7.0.2.1.f.1.112 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(162842,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10NL_GD_B07A201 Obigo/Q03C';
+  $ua = 'SharpT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 UP.Browser/7.0.2.3.119 (GUI) MMP/2.0 Push/PO';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(241863,21108,62730,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15UK_FS_B07A105_ORANGE Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP WX-T71';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(241863,21108,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15UK_FS_B07A106_ORANGE Obigo/Q03C Novarra-Vision/8.0';
+  $ua = 'SHARP-TQ-GX10/1.0.5';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441306,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10HU_HU_B07A200 Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX15';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(330403,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15CH_GeFrIt_B07A101_ORANGE Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX27';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(234002,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15MU_FS_B07A100_ORANGE Obigo/Q03C';
+  $ua = 'SHARP-TQ-GX33';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441450,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760-MTN/X760_Z22_UK_BFFA100_MTN Obigo/Q03C';
+  $ua = 'SHARP-TQ-GZ200S';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441522,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760-vegas-orange/X760_Z15UK_FS_B07A106_ORANGE Obigo/Q03C';
+  $ua = 'SHARP-TQ-V802SH';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
+    $dl[] = array(441666,116222,16149,841, $ua);
   }
-  $ua = 'ZTE-G-X760/X760_Z10UK_GD_B07A202 Obigo/Q03C';
+  $ua = 'SHARP-Z800/1.0 UP.Browser/4.1.26c3';
   $ns = E92($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(12252,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-X760-Optimus/X760_Z15PT_Pt_BFFA100_OPTIMUS Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12252,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G S213/WAP2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13855,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G-S213/WAP2.0 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13855,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G-S213/WAP2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13855,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-Me/Mobile';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16305,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F930(3UK)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15014,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F930(Yoigo)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15014,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F930(3UK)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15014,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F930(TWM)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15014,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-R100/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13518,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R100/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13518,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R100/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13518,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R101/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14581,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R101/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14581,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T870 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 firmware/T870 T06';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13818,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-T108/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14212,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T108/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14212,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T930 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 firmware/T930 T06';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13774,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-T95 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1 firmware/T95 T03 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13104,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-T95 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1 firmware/T95 T03';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13104,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-TU880_TD/1.0 Linux/2.6.32 Android/2.2 Release/5.25.2011 Browser/AppleWebKit533.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13051,17979,3508,18092, $ua);
-  }
-  $ua = 'ZTE-T90/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12996,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T90/1.0 NetFront/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12996,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T90/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12996,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T54 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 firmware/T54 T04';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12660,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-T54 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 firmware/T54 T04 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12660,6476,4223,18092, $ua);
-  }
-  $ua = 'ZTE-T6/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12545,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T6/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12545,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-C70/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14458,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE-G-X670-Lisbon-orange/X670_V1_OG_Z2_FRES_DFFA107 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X670-Lisbon-orange/X670_V1_OG_Z2_FRES_DFFA110 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X670-Lisbon-orange/X670_V1_OG_Z2_FRES_DFFA110 Obigo/Q03C Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X670-Lisboa-orange/X670_V1_OG_Z3_ESFR_DFFA109 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-SAGE/X670_V1_Z2_FRES_BFFA101 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X670-Lisbon-orange/X670_V1_OG_Z2_FRES_DFFA107 Obigo/Q03C Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13364,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-R6/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13481,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R6/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13481,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R109/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13822,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R109/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13822,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-G-X930-T-Mobile/X930_V1_Z1_EN_B18F103 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1, ZTE-G-X930-T-Mobile/X930_V1_Z1_EN_B18F103 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14667,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X930-T-Mobile/X930_V1_Z1_EN_B18F103 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14667,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G-X930-T-Mobile/X930_V1_Z1_EN_B18F103 Obigo/Q03C Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14667,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z4_IN_BFFC107 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z0_ID_BFFC102 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z1_ID_BFFC102 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z4_IN_BFFC101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C, ZTE-CG990/CG990_Z4_IN_BFFC101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z11_SZ_BFFC100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z10_NG_BFFC100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z4_IN_BFFC101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-CG990/CG990_Z1_ID_BFFC101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13860,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-T2/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15520,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T2/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15520,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-X990/X990_V2_Z11_ES_D1EF100 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14465,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-X990/X990_V2_Z12_ESFR_D18F100 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14465,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-X990/X990_V2_Z11_ES_D1EF100  Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14465,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-X990/X990_V2_Z5_FR_D13F104  Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14465,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-X990/X990_V1_Z2_ID_BFFC101  Profile/MIDP-1.0 Configuration/CLDC-1.0 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14465,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-F952(METFONE)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13610,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F952(BYT)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13610,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F952(BJK)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13610,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F952(VMS)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.1 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13610,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE Bluebelt/v2/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13742,6742,4643,18092, $ua);
-  }
-  $ua = 'ZTE Bluebelt/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13742,6742,4643,18092, $ua);
-  }
-  $ua = 'ZTE-F912/1.0 ACS-NF/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14585,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-F912/1.0 ACS-NF/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14585,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-R220/1.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15381,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-R220/1.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15381,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G N281/WAP2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13319,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G N281/WAP2.0 Profile/MIDP-2.0 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13319,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-C78/1.0 SMIT-Browser/2.0.0 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13572,5282,3579,18092, $ua);
-  }
-  $ua = 'ZTE-C78/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13572,5282,3579,18092, $ua);
-  }
-  $ua = 'ZTE-G-S215/WAP2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14170,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-Cute/ZTE-G movistar 731/WAP2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12252,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G X760';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12252,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G-X760-BASE';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12252,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G X760, ZTE-G X760';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12252,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F900/1.0 ACS-NF/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14487,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-V8301/MB6801_V1_Z1_VN_F1BPa101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12374,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-V8301/MB6801_V1_Z1_VN_F1BPa101 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12374,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-T106/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14586,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T106/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14586,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F866/1.0 ACS-NF/3.2 Qtv/4.3 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17694,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F866/1.0 ACS-NF/3.2 Qtv/4.3';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17694,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-R54/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12644,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-R54/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12644,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-R231/2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14023,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-C_S265/VE_S265_NBTL25FV1.0.0B17 SMIT-BROWSER/V2.0.0 CTC/1.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15974,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-R230/2.0 Profile/MIDP-2.0 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13881,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-R230/2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13881,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-T165i/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14213,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T165i/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14213,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F101(RDS)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16471,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F101/1.0 ACS-NF/3.4 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16471,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F101/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16471,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-MDTOUCHMINI(3ITA)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13728,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F106(Vinaphone)/1.0 NetFront/3.5 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13753,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-ONIDA F970/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13824,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R90/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13982,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-R90/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13982,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-E850(VIBO)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12549,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-E850/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12549,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-E850(ChinaUnicom)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12549,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-F188/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F188/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F188-CSL/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F188-Tigo/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T7/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12662,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-T7/1.0 ACS-NF/3.4 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12662,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-G-N290-BASE-P107A2V1.0.0 Obigo/Q03';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13949,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-G N290/WAP2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13949,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F156/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12724,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F156/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12724,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-R235/1.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14477,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-R235/1.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14477,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-C79/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15292,5282,3579,18092, $ua);
-  }
-  $ua = 'ZTE-F160(Zambia)/1.0 NetFront/3.4 QTV5.2 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14768,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-U E880/Obigo Q03c/MIDP-2.0 Configuration/CDLC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13727,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE Bluebelt II/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13742,6742,4808,18092, $ua);
-  }
-  $ua = 'ZTE silverbelt/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13754,6742,4808,18092, $ua);
-  }
-  $ua = 'ZTE-F252/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14043,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-SAGE/X671_V1_Z1_ES_DFFA102 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15049,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-SAGE/X671_V1_Z1_ES_DFFA103 Profile/MIDP-2.0 Configuration/CLDC-1.1 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15049,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-F188(Smart Sandbox)/1.0 ACS-NF/3.3 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-F188(Smart Sandbox)/1.0 ACS-NF/3.3 QTV2.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14138,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-F165/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13843,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F165/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13843,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F153/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15548,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F153/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15548,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F230/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13737,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-A261/P103B9V1.0.0/WAP2.0 Profile';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15080,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-A261/P103B9V1.0.0/WAP2.0 Profile AppEngine-Google; (+http://code.google.com/appengine; appid: 360hours)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15080,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F950/1.0 ACS-NF/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13831,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-N295-Sydney-Optimus/Obigo Q03C/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13518,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-C77/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12547,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE-F260/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12693,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F858/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12722,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F858/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12722,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F256/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17695,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F152/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15091,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F152/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15091,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F103/1.0 ACS-NF/3.4 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12333,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-G i766';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12760,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F159/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14076,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-F159/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14076,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-MTC 840/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13672,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-C_R518/CTJCB_R518_RBTN01NV1.0.2B01 SMIT-BROWSER/V2.0.0 CTC/1.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12939,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-C_R518/CT_R518_RBTN01NV1.0.2B03 SMIT-BROWSER/V2.0.0 CTC/1.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12939,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-A661/2.0 Profile/MIDP-2.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15061,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F951-Orange/1.0 ACS-NF/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15085,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-WIN V520/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17693,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F952/1.0 ACS-NF/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13610,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE F860/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12217,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F100(Orange_Moldova)/1.0 NetFront/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12772,17017,4223,18092, $ua);
-  }
-  $ua = 'ZTE-R7/1.0 ACS-NF/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13154,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-F105/1.0 ACS-NF/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14208,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-G N280/WAP2.0 Profile';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12389,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-G-X672/X672_V1_Z1_PT_DFFA103 Obigo/Q03C';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12993,17017,3807,18092, $ua);
-  }
-  $ua = 'ZTE-E821/1.0 ACS-NF/3.5 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13014,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F928/1.0 ACS-NF/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14065,17017,3601,18092, $ua);
-  }
-  $ua = 'ZTE-F850/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12737,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-601i/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12742,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-C362/1.0 SMIT-Browser/2.0.0 CTC/1.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13567,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE-C362/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13567,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE-A211/P109A2V1.0.0/WAP2.0 Profile';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15485,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F600(Yoigo)/1.0 NetFront/3.4 QTV5.1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15550,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-WIN V825/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12120,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F852/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12804,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-P622F2/1.0 NetFront/3.4 QTV5.1 Profile /MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13917,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-C36X/1.0 SMIT-Browser/2.0.0 CTC/1.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15379,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE F868/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13989,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-W N61/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13134,6742,4643,18092, $ua);
-  }
-  $ua = 'ZTE-C88/1.0 SMIT-Browser/2.0.0';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13156,17017,3579,18092, $ua);
-  }
-  $ua = 'ZTE-WIN V820/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12198,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F868/1.0 ACS-NF/3.2 Qtv/4.3 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13989,17017,4924,18092, $ua);
-  }
-  $ua = 'ZTE-E880(ChinaUnicom)/1.0 Nucleus/1.13 Opera Mobile/10 Profile/MIDP-2.1 Configuration/CLDC-1.1  Opera/9.80 (MTK; Nucleus; U; en-US) Presto/2.4.18 Version/10.00';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12813,17017,4536,18092, $ua);
-  }
-  $ua = 'ZTE-W X60/1.0.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12829,6742,4808,18092, $ua);
-  }
-  $ua = 'ZTE-MD301 H3G/1.0 ACS-NF/3.4 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13050,17017,3976,18092, $ua);
-  }
-  $ua = 'ZTE-C705';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14458,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-C880';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13156,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-F252';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14043,17017,17470,18092, $ua);
-  }
-  $ua = 'ZTE-T165i/1.0 ACS-NF/3.2 QTV5.02 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E92($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14213,17017,4924,18092, $ua);
+    $dl[] = array(241863,116222,425845,841, $ua);
   }
   return $dl;
 }
