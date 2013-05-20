@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -44,797 +37,356 @@ function E79($target, $test, $ls) {
 function _H79($useragent) {
   $ls = PHP_INT_MAX;
   $dl = array();
-  $ua = 'SHARP-STX2/MC.40; Mozilla/5.0 (Profile/MIDP-2.0 Configuration/CLDC-1.1; Opera Mini/att/4.2.19039; U; en-US) Opera 9.50';
+  $ua = 'Panasonic-MX7/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(18088,6476,4732,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-STX2/MC.40 POLARIS/6.15 Profile/MIDP-2.0 Configuration/CLDC-1.1 Novarra-Vision/8.0';
+  $ua = 'Panasonic-A100';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14274,6476,4902,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-STX2/MC.40 POLARIS/6.15 Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ua = 'Panasonic-A500';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(14274,6476,4902,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
+  $ua = 'Panasonic-A500/R1 Profile/MIDP-1.0 Configuration/CLDC-1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
+  $ua = 'Panasonic-G60';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20/1.1c Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
+  $ua = 'Panasonic-G70';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20/1.0c Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
+  $ua = 'Panasonic G600i';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.103 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X60';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX20N/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X66/R01 Profile';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-21/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X68';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-21/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X77';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17124,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TM-100/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X77/R01 Profile';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TM-150/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.2.101 (GUI) MMP/1.0';
+  $ua = 'Panasonic-X200P/RP1 Profile/MIDP-1.0 Configuration/CLDC-1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TM-200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3 (GUI) MMP/2.0';
+  $ua = 'Panasonic-X400P/RP1 Profile/MIDP-1.0 Configuration/CLDC-1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-T15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
+  $ua = 'Panasonic-SA7/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376471,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-L15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.111 (GUI) MMP/2.0';
+  $ua = 'Panasonic-VS3/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(202516,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-A15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
+  $ua = 'Panasonic-VS3/VA47 Browser/Obigo-Browser/3.0 MMS/Obigo-MMS/2.0 Java/Jblend/1.0 Sync/Panasonic/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(202516,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-E30/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.106 (GUI) MMP/1.0';
+  $ua = 'Panasonic-VS3/(2005.05.11)SW1.0/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(202516,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX23/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
+  $ua = 'Panasonic-VS3/#Vodafone/1.0/Panasonic-VS3';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(202516,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX32/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.105 (GUI) MMP/1.0';
+  $ua = 'Panasonic-VS6/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(249861,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GZ1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.103 (GUI) MMP/2.0';
+  $ua = 'Panasonic-VS6';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(249861,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GZ100S/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.105 (GUI) MMP/2.0';
+  $ua = 'Panasonic-VS2/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376903,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-F200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
+  $ua = 'Panasonic-VS2';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,3625,18092, $ua);
+    $dl[] = array(376903,202509,16149,841, $ua);
   }
-  $ua = 'SHARP WX-T71';
+  $ua = 'Panasonic-X800/1.0 SymbianOS/7.0 Series60/2.0 Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,31588,30581,841, $ua);
   }
-  $ua = 'SHARP-TM-150';
+  $ua = 'Panasonic-X701/1.0 SymbianOS/7.0 Series60/2.0 Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,31588,30581,841, $ua);
   }
-  $ua = 'SHARP-TM-200';
+  $ua = 'Panasonic-G60/1.0 UP.Browser/6.1.0.6 MMP/1.0 UP.Browser/6.1.0.6 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX1';
+  $ua = 'Panasonic-G60/1.0 UP.Browser/6.1.0.7 MMP/1.0 UP.Browser/6.1.0.7 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX12';
+  $ua = 'Panasonic-G70/1.0 UP.Browser/6.1.0.6.d.2.100 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX13';
+  $ua = 'Panasonic-X300/1.0 UP.Browser/6.1.0.7.8 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-L15';
+  $ua = 'Panasonic-X300/1.0 UP.Browser/6.1.0.7.4 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-A15';
+  $ua = 'Panasonic-VS7/1.0/RP1 Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(249213,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX23/1.0';
+  $ua = 'Panasonic-VS7';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(249213,202509,16149,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX32i';
+  $ua = 'Panasonic-A210/1.0 UP.Browser/6.1.0.7.8 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(231330,21108,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GZ1';
+  $ua = 'Panasonic-SC3/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.7.8 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(239187,202509,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GZ100T';
+  $ua = 'Panasonic-G50/1.0 UP.Browser/6.1.0.6.d.2.100 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(258320,21108,194008,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX-i98';
+  $ua = 'Panasonic-A200/1.0 UP.Browser/6.2.2.7 (GUI)MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,18014,841, $ua);
   }
-  $ua = 'SHARP-TQ-V750';
+  $ua = 'Panasonic-X500/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.7 (GUI) MMP/1.0';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,18014,841, $ua);
   }
-  $ua = 'SHARP-Z800';
+  $ua = 'Panasonic-GAD35/1.0 UP.Browser/4';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16993,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,429604,841, $ua);
   }
-  $ua = 'SHARP-TQ-GX30/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
+  $ua = 'Panasonic-GAD35/1.1 UP.Browser/4.1.24d';
   $ns = E79($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17113,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX30/1.0 Profile/MISP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX30i/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.104 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX-31/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.c.1.106 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX25/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.106 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13311,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX25/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.109 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13311,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10/0.0 UP.Browser/6.1.0.1.148 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10/0.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.2.129 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.101 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10i/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.106 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10i/1.1 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.d.2 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX17/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15018,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.110 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17116,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX15/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.d.1.112 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17116,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP/1.1/SH9020C/SHC001 Mozilla/5.00 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13970,17017,3976,18092, $ua);
-  }
-  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0  Novarra-Vision/8.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17557,17017,4222,18092, $ua);
-  }
-  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17557,17017,4222,18092, $ua);
-  }
-  $ua = 'SharpWXT91/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.101 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17557,17017,4222,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX1/0.0 UP.Browser/6.1.b.330 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16993,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX1/0.0 UP.Browser/6.1.0.3.118 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16993,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX1/1.0 UP.Browser/6.1.0.5.102 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16993,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-V750/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.d.1 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16993,17017,4901,18092, $ua);
-  }
-  $ua = 'SHARP/1.0/SH9010C/SHC001 Mozilla/4.08 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14147,17017,3976,18092, $ua);
-  }
-  $ua = 'SharpWXT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13575,17017,4222,18092, $ua);
-  }
-  $ua = 'SharpWXT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 UP.Browser/7.0.2.3.119 (GUI) MMP/2.0 Push/PO';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(13575,17017,4222,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX29/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.h.1.100 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16972,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP SH6017D / Obigo Browser Q03C';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14004,17017,3807,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX30i';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX-31';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX-31i';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17113,17017,17470,18092, $ua);
-  }
-  $ua = 'SharpWXT81/SHS001/1.0 Browser/UP.Browser/7.0.2.1.f.1.112 (GUI) Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-J-Profile/JSCL-1.2.2 Ext-V-Profile/VSCL-2.0.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(12341,17017,4222,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-V802SH';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17073,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP/1.1/SH1810C/SHC001 Mozilla/5.00 (compatible) Browser/NF/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15069,17017,3976,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX27/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.163 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15305,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX27/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.h.2 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15305,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX20';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17124,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX20i';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17124,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX-21';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17124,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GZ200/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17082,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GZ200S/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.d.1.110 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17082,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GZ200S';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17082,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP SH7110C / Obigo Browser 2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(14155,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX-T300/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.3.f.1.103 (GUI) MMP/2.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15332,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX22/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.2.107 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17120,17017,3625,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX22S/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.4.c.1.100 (GUI) MMP/1.0';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17120,17017,3625,18092, $ua);
-  }
-  $ua = 'SharpT71/SHS001/1.0 Browser/UP.Browser/7.0.2.1a.f.1.104 (GUI) Profile/MIDP-2.0 UP.Browser/7.0.2.3.119 (GUI) MMP/2.0 Push/PO';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16993,17017,4222,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX10/1.0.5';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17130,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX15';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(17116,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX27';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(15305,17017,17470,18092, $ua);
-  }
-  $ua = 'SHARP-TQ-GX33';
-  $ns = E79($useragent, $ua, $ls);
-  if ($ns <= $ls) {
-    if ($ns < $ls) {
-      unset($dl);
-      $ls = $ns;
-    }
-    $dl[] = array(16939,17017,17470,18092, $ua);
+    $dl[] = array(376471,202509,425845,841, $ua);
   }
   return $dl;
 }

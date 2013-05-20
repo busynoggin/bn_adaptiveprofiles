@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -35,23 +28,23 @@ function E47($target, $test, $ls) {
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
-  fiftyone_degrees_calculate_segment_score($target[1], $test[1], $ls, 10, $score);
+  fiftyone_degrees_calculate_segment_score($target[1], $test[1], $ls, 2, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
-  fiftyone_degrees_calculate_segment_score($target[2], $test[2], $ls, 10, $score);
+  fiftyone_degrees_calculate_segment_score($target[2], $test[2], $ls, 100000, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
-  fiftyone_degrees_calculate_segment_score($target[3], $test[3], $ls, 10, $score);
+  fiftyone_degrees_calculate_segment_score($target[3], $test[3], $ls, 100000, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
-  fiftyone_degrees_calculate_segment_score($target[4], $test[4], $ls, 10, $score);
+  fiftyone_degrees_calculate_segment_score($target[4], $test[4], $ls, 10000, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
-  fiftyone_degrees_calculate_segment_score($target[5], $test[5], $ls, 10, $score);
+  fiftyone_degrees_calculate_segment_score($target[5], $test[5], $ls, 10000, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
@@ -74,666 +67,8994 @@ function _H47($useragent) {
 
   // Calculate the segments for the useragent.
   $segments = array(
-    0 => fiftyone_degrees_preg_match_all('#(?<=^LG/)[\\w\\d]+#', $useragent),
-    1 => fiftyone_degrees_preg_match_all('#(?<=^LG(-|/))[^\\s/]+#', $useragent),
-    2 => fiftyone_degrees_preg_match_all('#(?<=NovarraVision)\\d\\.\\d#', $useragent),
-    3 => fiftyone_degrees_preg_match_all('#(?<=Browser/Teleca-)[^\\s]+#', $useragent),
-    4 => fiftyone_degrees_preg_match_all('#(?<=UCBrowser)\\d\\.\\d#', $useragent),
-    5 => fiftyone_degrees_preg_match_all('#(?<=Browser/Obigo-)[^/]+/[\\d\\.]+#', $useragent));
-  $ns = E47($segments, array(0 => array(0 => 'KU990'), 1 => array(0 => 'KU990-Orange'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+    0 => fiftyone_degrees_preg_match_all('#(?<=Chrome/)\\d+\\.\\d+#', $useragent),
+    1 => fiftyone_degrees_preg_match_all('#(?<=\\(|;|,)[^\\);]+#', $useragent),
+    2 => fiftyone_degrees_preg_match_all('#(?<=RockMelt/)\\d+\\.\\d+#', $useragent),
+    3 => fiftyone_degrees_preg_match_all('#Ubuntu/\\d+\\.\\d+#', $useragent),
+    4 => fiftyone_degrees_preg_match_all('#Sleipnir/\\d+\\.\\d+#', $useragent),
+    5 => fiftyone_degrees_preg_match_all('#Nutch-\\d+\\.\\d+#', $useragent));
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11656,17483,4848,18092, 'LG/KU990-Orange/v10g Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.6 (KHTML like Gecko) Chrome/23.0.1239.0 Safari/537.6');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990'), 1 => array(0 => 'KU990'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.17', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11656,17483,4848,18092, 'LG/KU990/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.17) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.17 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990i'), 1 => array(0 => 'KU990i-Orange'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~my-gate32'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12115,17483,4848,18092, 'LG/KU990i-Orange/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.10 (KHTML, like Gecko) Chrome/23.0.1262.0 Safari/537.10 AppEngine-Google; (+http://code.google.com/appengine; appid: s~my-gate32)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990i'), 1 => array(0 => 'KU990i'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.10', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12115,17483,4848,18092, 'LG/KU990i/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.10) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.10 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990i'), 1 => array(0 => 'KU990i-Bouygues'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/23.0.1271.26', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12115,17483,4848,18092, 'LG/KU990i-Bouygues/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/23.0.1271.26) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.26 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KC910'), 1 => array(0 => 'KC910'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.40', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11765,17483,3728,18092, 'LG/KC910/V10a Browser/Obigo-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.40) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.40 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KC910e'), 1 => array(0 => 'KC910e'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.26', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11765,17483,3728,18092, 'LG/KC910e/V10c Browser/Obigo-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.26) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.26 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT505e'), 1 => array(0 => 'GT505e'), 2 => NULL, 3 => array(0 => 'Q7.1'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.60', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11811,17483,3728,18092, 'LG/GT505e/v10b Browser/Teleca-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.60) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.60 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT505'), 1 => array(0 => 'GT505'), 2 => NULL, 3 => array(0 => 'Q7.1'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.52', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11811,17483,3728,18092, 'LG/GT505/v10a Browser/Teleca-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.52) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.52 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'BL40g'), 1 => array(0 => 'BL40g'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.64', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11985,17483,3459,18092, 'LG/BL40g/V10a Browser/Obigo-Q7.3 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'BL40'), 1 => array(0 => 'BL40'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/23.0.1271.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11985,17483,3459,18092, 'LG/BL40/V10a Browser/Obigo-Q7.3 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'BL20'), 1 => array(0 => 'BL20'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12435,17483,3459,18092, 'LG/BL20/v10a Browser/Obigo-Q7.3 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF750'), 1 => array(0 => 'KF750'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13361,17483,3534,18092, 'LG/KF750/v10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8138'), 1 => array(0 => 'U8138'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/23.0.1271.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15631,17483,17660,18092, 'LG/U8138/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT500'), 1 => array(0 => 'GT500'), 2 => NULL, 3 => array(0 => 'Q7.1'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.91', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11760,17483,3728,18092, 'LG/GT500/v10a Browser/Teleca-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT500'), 1 => array(0 => 'GT500-Bouygues'), 2 => NULL, 3 => array(0 => 'Q7.1'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.95', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11760,17483,3728,18092, 'LG/GT500-Bouygues/v10a Browser/Teleca-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT405'), 1 => array(0 => 'GT405'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/23.0.1271.95', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13537,17483,17660,18092, 'LG/GT405/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'Maka'), 1 => array(0 => 'Maka????'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17483,17660,18092, 'LG/Maka????');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U370'), 1 => array(0 => 'U370'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17483,17660,18092, 'LG/U370');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990i'), 1 => array(0 => 'KU990i'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12115,17483,17660,18092, 'LG/KU990i/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KC910i'), 1 => array(0 => 'KC910i-Bouygues'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11935,17483,3728,18092, 'LG/KC910i-Bouygues/V10a Browser/Obigo-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KC910i'), 1 => array(0 => 'KC910i'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/23.0.1271.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11935,17483,3728,18092, 'LG/KC910i/V10a Browser/Obigo-Q7.1 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU990'), 1 => array(0 => 'KU990'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11656,17483,17660,18092, 'LG/KU990/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U990'), 1 => array(0 => 'U990'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11656,17483,17660,18092, 'LG/U990/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U990'), 1 => array(0 => 'U990.v1.0'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11656,17483,17660,18092, 'LG/U990.v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML like Gecko) Chrome/23.0.1271.64 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF700'), 1 => array(0 => 'KF700-O2'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14432,17483,3534,18092, 'LG/KF700-O2/v10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF700'), 1 => array(0 => 'KF700'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14432,17483,3534,18092, 'LG/KF700/v10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KC910'), 1 => array(0 => 'KC910'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11765,17483,17660,18092, 'LG/KC910/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GD580'), 1 => array(0 => 'GD580'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14755,17483,17660,18092, 'LG/GD580/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU250'), 1 => array(0 => 'KU250'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14590,17483,17660,18092, 'LG/KU250/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF310'), 1 => array(0 => 'KF310'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14531,17483,17660,18092, 'LG/KF310/v2.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU380'), 1 => array(0 => 'KU380'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13891,17483,17660,18092, 'LG/KU380/v10c Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'HB620T'), 1 => array(0 => 'HB620T'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13762,17483,3534,18092, 'LG/HB620T/v10b Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8120'), 1 => array(0 => 'U8120'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15498,17483,17660,18092, 'LG/U8120/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8120C'), 1 => array(0 => 'U8120C'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~vivillrocku'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15498,17483,17660,18092, 'LG/U8120C/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: s~vivillrocku)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU970'), 1 => array(0 => 'KU970'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12157,17483,17660,18092, 'LG/KU970/v10b Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/534.7 ZemanaAID/FFFF0061');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KE990'), 1 => array(0 => 'KE990'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: optimizelyedit'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15610,17483,4848,18092, 'LG/KE990/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: optimizelyedit)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U880'), 1 => array(0 => 'U880'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' ', 3 => ' CJPMS_AAP715ACX', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15472,17483,17660,18092, 'LG/U880/v1.0');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; ; CJPMS_AAP715ACX) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'BL42'), 1 => array(0 => 'BL42'), 2 => NULL, 3 => array(0 => 'Q7.3'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' ', 3 => ' NCLIENT50_AAP715AF4E5CBC', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13637,17483,3459,18092, 'LG/BL42/v10a Browser/Teleca-Q7.3 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,673603,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; ; NCLIENT50_AAP715AF4E5CBC) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KS500Q'), 1 => array(0 => 'KS500Q'), 2 => NULL, 3 => array(0 => 'Q7.1/3.12'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.14', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14416,17483,3728,18092, 'LG/KS500Q/v10a Browser/Teleca-Q7.1/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.14) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.14 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KB770'), 1 => array(0 => 'KB770'), 2 => NULL, 3 => array(0 => 'Q7.1'), 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.26', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15081,17483,3728,18092, 'LG/KB770/v10a Browser/Teleca-Q7.1 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.26) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU580'), 1 => array(0 => 'KU580'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A1/2.16')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.39', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12637,17483,3857,18092, 'LG/KU580 Browser/Obigo-Q05A1/2.16 MMS/LG-MMS-V1.0/1.2 Java/LGVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-V-Profile/VSCL-2.0.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.39) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.39 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U970'), 1 => array(0 => 'U970'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14461,17483,17660,18092, 'LG/U970/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U250'), 1 => array(0 => 'U250'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(16249,17483,17660,18092, 'LG/U250/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U890'), 1 => array(0 => 'U890'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15326,17483,17660,18092, 'LG/U890/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KT520'), 1 => array(0 => 'KT520'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15174,17483,3534,18092, 'LG/KT520/v10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8360'), 1 => array(0 => 'U8360'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.91', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15494,17483,17660,18092, 'LG/U8360/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.91) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.91 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8180'), 1 => array(0 => 'U8180'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12240,17483,17660,18092, 'LG/U8180/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.91) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.91 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8180F'), 1 => array(0 => 'U8180F'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.64', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12240,17483,17660,18092, 'LG/U8180F');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.64 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U960'), 1 => array(0 => 'U960'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.92', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15734,17483,17660,18092, 'LG/U960/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.92) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU950'), 1 => array(0 => 'KU950'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.92', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13697,17483,17660,18092, 'LG/KU950/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.92) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF700'), 1 => array(0 => 'KF700'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14432,17483,17660,18092, 'LG/KF700/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8330'), 1 => array(0 => 'U8330'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13680,17483,17660,18092, 'LG/U8330/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF390Q'), 1 => array(0 => 'KF390Q'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.94', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14965,17483,17660,18092, 'LG/KF390Q/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U830'), 1 => array(0 => 'U830'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.94', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15296,17483,17660,18092, 'LG/U830/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8110'), 1 => array(0 => 'U8110'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(16572,17483,17660,18092, 'LG/U8110/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF755'), 1 => array(0 => 'KF755'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12197,17483,17660,18092, 'LG/KF755/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.56) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.56 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U400'), 1 => array(0 => 'U400'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14385,17483,17660,18092, 'LG/U400/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/534.7 ZemanaAID/FFFF0061');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U900'), 1 => array(0 => 'U900'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(16274,17483,17660,18092, 'LG/U900/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU800'), 1 => array(0 => 'KU800'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13925,17483,17660,18092, 'LG/KU800/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8380'), 1 => array(0 => 'U8380'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.96', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15392,17483,17660,18092, 'LG/U8380/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.96) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'L600V'), 1 => array(0 => 'L600V'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14910,17483,17660,18092, 'LG/L600V/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U300'), 1 => array(0 => 'U300'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14481,17483,17660,18092, 'LG/U300/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4 Sleipnir/3.7.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KE990d'), 1 => array(0 => 'KE990d'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15716,17483,4848,18092, 'LG/KE990d/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4 Sleipnir/3.7.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8130'), 1 => array(0 => 'U8130'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.96', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12639,17483,17660,18092, 'LG/U8130/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.96) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU450'), 1 => array(0 => 'KU450'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1201.0', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15731,17483,17660,18092, 'LG/KU450/v10a Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1201.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1201.0 Safari/537.1');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U310'), 1 => array(0 => 'U310'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/22.0.1229.26', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15467,17483,17660,18092, 'LG/U310/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/22.0.1229.26) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF750'), 1 => array(0 => 'KF750'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.56', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13361,17483,17660,18092, 'LG/KF750/v1.0 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/22.0.1229.56) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.56 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU385'), 1 => array(0 => 'KU385'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: optimizelyedit'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14061,17483,17660,18092, 'LG/KU385/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 AppEngine-Google; (+http://code.google.com/appengine; appid: optimizelyedit)');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U370'), 1 => array(0 => 'U370'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(13773,17483,17660,18092, 'LG/U370/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8550'), 1 => array(0 => 'U8550'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15516,17483,17660,18092, 'LG/U8550/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KE990c'), 1 => array(0 => 'KE990c'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.6')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15577,17483,4848,18092, 'LG/KE990c/v10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GD880'), 1 => array(0 => 'GD880'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12290,17483,17660,18092, 'LG/GD880 Browser/AppleWebKit/531 Widget/LGMW/3.0 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.94 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KB620'), 1 => array(0 => 'KB620'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15546,17483,17660,18092, 'LG/KB620/v1.0 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U450'), 1 => array(0 => 'U450'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15502,17483,17660,18092, 'LG/U450/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KP330'), 1 => array(0 => 'KP330'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12976,17483,17660,18092, 'LG/KP330/v1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KF690'), 1 => array(0 => 'KF690'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Q05A/3.12')), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15092,17483,3534,18092, 'LG/KF690/v10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KT525'), 1 => array(0 => 'KT525'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15583,17483,17660,18092, 'LG/KT525/v1.0 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8290'), 1 => array(0 => 'U8290'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(12862,17483,17660,18092, 'LG/U8290/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'U8100'), 1 => array(0 => 'U8100'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.1'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(16258,17483,17660,18092, 'LG/U8100');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.1.2100.221 Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'KU830'), 1 => array(0 => 'KU830'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'bskt'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(14844,17483,17660,18092, 'LG/KU830/v1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.520 YaBrowser/1.5.1105.520 (bskt) Safari/537.4');
     $ls = $ns;
   }
-  $ns = E47($segments, array(0 => array(0 => 'GT500'), 1 => array(0 => 'GT500'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'bskt'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(11760,17483,17660,18092, 'LG/GT500');
+    $dl[] = array(27547,114029,667598,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.520 YaBrowser/1.5.1105.520 (bskt) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1297.0', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1297.0) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1297.0 Safari/537.16');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~flybear008'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.13 (KHTML, like Gecko) Chrome/24.0.1290.1 Safari/537.13 AppEngine-Google; (+http://code.google.com/appengine; appid: s~flybear008)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1290.1', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1290.1) AppleWebKit/537.13 (KHTML, like Gecko) Chrome/24.0.1290.1 Safari/537.13');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.5', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.5 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.5 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.14', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.14) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.14 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.14', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.14) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.14 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.27', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.27) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.35', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.35) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.35 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.40', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.40) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.40 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.45', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.45) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.45 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.45', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.45) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.45 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.40', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.40) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.40 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.52', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.52', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.56', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/24.0.1312.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/534.7 ZemanaAID/FFFF0096');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.17 (KHTML like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; Avant TriCore) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' ', 2 => ' NCLIENT50_AAP715B4218F57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; ; NCLIENT50_AAP715B4218F57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' ', 3 => ' CJPMS_AAP715ACX', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; ; CJPMS_AAP715ACX) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,709752,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.17 (KHTML like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1171.0', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1171.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1171.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.15', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.15) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.15 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.60', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.60', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.49', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.49) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.49 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.77', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.77) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.77', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.77) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.75', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.75', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.83', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.83', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.89', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.89', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 Sleipnir/3.7.0');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~yunantongxue'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~yunantongxue)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/534.7 ZemanaAID/FFFF0061');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; Avant TriCore) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 Sleipnir/3.7.3');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1163.0', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1163.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1163.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.41', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/21.0.1180.41) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.41 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/21.0.1180.49', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/21.0.1180.49) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.49 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~mintchipchoco'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~mintchipchoco)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0', 1 => '1.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1 115Chrome/1.0.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0', 1 => '1.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1 115Chrome/1.0.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,632282,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1323.1', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1323.1) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1323.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.5', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.5) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.5 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.36', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.36) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.36 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.29', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.29) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.29 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.36', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.36) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.36 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.45', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.45) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.45 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.58', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.58) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.58 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.58', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.58) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.58 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.68', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.68) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.68 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.84', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.84) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.84 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.84', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.84) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.84 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.19 (KHTML like Gecko) Chrome/25.0.1323.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; Avant TriCore) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; Avant TriCore) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.172', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.172', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.152', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.152', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.160', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/25.0.1364.160) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/25.0.1364.160', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,744007,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/25.0.1364.160) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1096.1', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1096.1) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1096.1 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1115.1', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1115.1) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1115.1 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1105.2', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1105.2) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1105.2 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/20.0.1132.11', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/20.0.1132.11) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.11', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.11) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.17', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.17) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.17 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.27', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.27) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.27 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.34', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.34) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.34 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.43', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.43) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/20.0.1132.43', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/20.0.1132.43) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.47', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/20.0.1132.47', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' chromeframe/20.0.1132.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 6.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/534.7 ZemanaAID/FFFF0061');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.21', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/20.0.1132.21) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.21 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.11 (KHTML like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.17', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.17) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.17 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.10', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.10) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.10 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.40', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.40) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.40 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.52', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.52) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.52 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.26', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.26) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.26 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.60', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.60) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.60 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/23.0.1271.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.64', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/23.0.1271.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.95', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/23.0.1271.95', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/23.0.1271.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/23.0.1271.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.95', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~youniyimo1', 4 => ' (+http://code.google.com/appengine', 5 => ' appid: s~youniyimo0'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo1) AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo0)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~youniyimo1', 4 => ' (+http://code.google.com/appengine', 5 => ' appid: s~youniyimo2'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo1) AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo2)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~youniyimo1', 4 => ' (+http://code.google.com/appengine', 5 => ' appid: s~youniyimo1'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo1) AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo1)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' ', 2 => ' NCLIENT50_AAP7150B86519C', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1; ; NCLIENT50_AAP7150B86519C) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~youniyimo1', 4 => ' (+http://code.google.com/appengine', 5 => ' appid: s~youniyimo3'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,673603,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11 AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo1) AppEngine-Google; (+http://code.google.com/appengine; appid: s~youniyimo3)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.15', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.15) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.15 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.41', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.41) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.41 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.49', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.49) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.49 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.60', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1163.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1163.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1163.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.57) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.57 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.60', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/21.0.1180.60', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.83', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.75', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/21.0.1180.75', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.81', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.81) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.81 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.77', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.77) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/21.0.1180.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/21.0.1180.83', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1180.89', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/21.0.1180.89', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~blassegg01'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~blassegg01)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~gzlinde'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~gzlinde)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~lixd1973'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~lixd1973)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~niko-cc'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~niko-cc)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.89', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; Avant TriCore) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~guoheshproxy'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~guoheshproxy)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 Sleipnir/3.7.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~rockthirdoverallnet'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~rockthirdoverallnet)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/21.0.1155.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/21.0.1155.2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1155.2 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0', 1 => '1.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1 115Chrome/1.0.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' ', 2 => ' NCLIENT50_AAPXA934', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,632282,841, 'Mozilla/5.0 (Windows NT 5.1; ; NCLIENT50_AAPXA934) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1207.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1207.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1207.1 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1221.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1221.0) AppleWebKit/537.3 (KHTML, like Gecko) Chrome/22.0.1221.0 Safari/537.3');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.14', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.14) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.14 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.26', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.26) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.56) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.56 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.39', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.39) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.39 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/22.0.1229.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.91) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.91 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.64 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.92', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.92) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => ' (+http://code.google.com/appengine', 3 => ' appid: s~blassegg01'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4 AppEngine-Google; (+http://code.google.com/appengine; appid: s~blassegg01)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.94', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4 Sleipnir/3.7.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => '1000:1210'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.<rndr(1000:1210');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.96', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.96) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/22.0.1229.94', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.94', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' en-US', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; en-US) AppleWebKit/535.12 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/535.12');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.1'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.1.4200.154 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/22.0.1229.95', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/22.0.1229.95) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.95 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' ', 2 => ' NCLIENT50_AAP7150B86519C', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; ; NCLIENT50_AAP7150B86519C) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'bskt'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.520 YaBrowser/1.5.1105.520 (bskt) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' zh-CN', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,667598,841, 'Mozilla/5.0 (Windows NT 5.1; zh-CN) AppleWebKit/535.12 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/535.12');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~feedly-nikon'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/23.0.912.77 Safari/535.7 AppEngine-Google; (+http://code.google.com/appengine; appid: s~feedly-nikon)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~feedly-hercule'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/535.7 (KHTML, like Gecko) Chrome/23.0.912.77 Safari/535.7 AppEngine-Google; (+http://code.google.com/appengine; appid: s~feedly-hercule)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1284.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1284.2) AppleWebKit/537.13 (KHTML, like Gecko) Chrome/24.0.1284.2 Safari/537.13');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.5 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.14', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.14) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.14 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.27', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.27) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.27 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.25', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.25) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.25 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.35', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.35) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.35 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.32', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.32) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.32 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.45', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.45) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.45 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.40', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.40) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.40 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.52', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.49', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.49) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.49 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/24.0.1312.52', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/24.0.1312.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/24.0.1312.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/24.0.1312.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; Avant TriCore) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' ', 2 => ' NCLIENT50_AAP7150B86519C', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1; ; NCLIENT50_AAP7150B86519C) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,709752,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.17 (KHTML like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1323.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1323.1) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1323.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.5) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.5 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.36', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.36) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.36 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.29', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.29) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.29 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.45', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.45) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.45 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.58', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.58) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.58 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.68', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.68) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.68 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.84', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.84) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.84 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/25.0.1364.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.172', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/25.0.1364.172', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.152', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.155', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.155) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.155 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/25.0.1364.152', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/25.0.1364.160', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/25.0.1364.160) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; Avant TriCore) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.172', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,744007,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.172', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.152', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; Avant TriCore) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,744007,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/23.0.1271.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.64', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.91', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/23.0.1271.91', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/23.0.1271.91) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.91 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/23.0.1271.95', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.95', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/23.0.1271.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,673603,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.11 (KHTML like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.52', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.56', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' en-US', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; en-US) AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 Safari/537.15');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; Avant TriCore) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,709752,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,673603,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.101 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1096.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1096.1) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1096.1 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1115.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1115.1) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1115.1 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1105.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1105.0) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1105.0 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1105.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1105.2) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1105.2 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.11', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.11) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.17', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.17) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.17 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.27', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.27) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.27 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.21', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.21) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.21 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.34', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.34) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.34 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.43', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.43) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.47', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/20.0.1132.47', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/20.0.1132.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' chromeframe/20.0.1132.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.2; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows', 1 => ' U', 2 => ' Windows NT 5.1', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US) AppleWebKit/534.7 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/534.7 ZemanaAID/FFFF0061');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,612794,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.64', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' chromeframe/23.0.1271.64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; chromeframe/23.0.1271.64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.1'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.1.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.95', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/23.0.1271.95) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.95 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.4'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.4.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/23.0.1271.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.2'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.2.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.3'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.3.0.0 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' chromeframe/23.0.1271.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; chromeframe/23.0.1271.97) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; Avant TriCore) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,673603,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.11 (KHTML like Gecko) Chrome/23.0.1271.91 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.60', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.60', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/21.0.1180.60) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.83', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.75', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.75', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/21.0.1180.75) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.83', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/21.0.1180.83) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/21.0.1180.79) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.77', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.77) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.77 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/21.0.1180.89', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/21.0.1180.89', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/21.0.1180.89) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 Sleipnir/3.7.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0; Avant TriCore) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,632282,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/24.0.1312.14', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/24.0.1312.14) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.14 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/24.0.1312.45', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/24.0.1312.45) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.45 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/24.0.1312.52', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.52', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/24.0.1312.52) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.1'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.1.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/24.0.1312.56', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/24.0.1312.56', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/24.0.1312.56) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/24.0.1312.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/24.0.1312.57) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.2'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.2.0.0 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,709752,841, 'Mozilla/5.0 (Windows NT 6.0; Avant TriCore) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/25.0.1364.97', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.97', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/25.0.1364.97) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.160', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/25.0.1364.160) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.2'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.2.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/25.0.1364.172', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.172', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/25.0.1364.172) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/25.0.1364.152', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/25.0.1364.152', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/25.0.1364.152) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.152 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.1'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.1.0.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/25.0.1364.160', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/25.0.1364.160) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0; Avant TriCore) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.160 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,744007,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~inqarticles'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 AppEngine-Google; (+http://code.google.com/appengine; appid: s~inqarticles)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~inqimg'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 AppEngine-Google; (+http://code.google.com/appengine; appid: s~inqimg)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko', 3 => ' (+http://code.google.com/appengine', 4 => ' appid: s~inqimx'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 AppEngine-Google; (+http://code.google.com/appengine; appid: s~inqimx)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,744007,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/26.0.1386.0', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/26.0.1386.0) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/26.0.1410.19', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/26.0.1410.19) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.19 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/26.0.1410.28', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/26.0.1410.28) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' chromeframe/26.0.1410.33', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,771690,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64; chromeframe/26.0.1410.33) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/22.0.1229.79', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.79', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/22.0.1229.79) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/22.0.1229.92', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/22.0.1229.92) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.92', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/22.0.1229.92) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.92 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/22.0.1229.94', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.94', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.7'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4 Sleipnir/3.7.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/22.0.1229.96', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/22.0.1229.96) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'bskt'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,667598,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.520 YaBrowser/1.5.1105.520 (bskt) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => ' like Gecko Chrome/24.0.1312.5 Safari/537.17'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 Macintosh Intel Mac OS X 10_6_8 AppleWebKit/537.17 KHTML, like Gecko Chrome/24.0.1312.5 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,709752,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => ' like Gecko Chrome/20.0.1132.57 Safari/536.11'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,612794,841, 'Mozilla/5.0 Macintosh Intel Mac OS X 10_7_4 AppleWebKit/536.11 KHTML, like Gecko Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.52 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.56 Safari/537.17,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' U', 2 => ' Unix', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,709752,841, 'Mozilla/5.0 (X11; U; Unix; en-US) AppleWebKit/537.15 (KHTML, like Gecko) Chrome/24.0.1295.0 Safari/537.15 Surf/0.5');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.57 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' chromeframe/22.0.1229.94', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; chromeframe/22.0.1229.94) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' Avant TriCore', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; Avant TriCore) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.96 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.8'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4 Sleipnir/3.8.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gtsr'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (gtsr) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'fnrb'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.511 YaBrowser/1.5.1105.511 (fnrb) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'bskt'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,667598,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1105.520 YaBrowser/1.5.1105.520 (bskt) Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => ' Google Web Preview'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko; Google Web Preview) Chrome/22.0.1229 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' U', 2 => ' Linux x86_64', 3 => ' en-US', 4 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; U; Linux x86_64; en-US) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => ' Google Page Speed Insights'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko; Google Page Speed Insights) Chrome/22.0.1229 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => ' Google Web Preview', 4 => 'gzip(gfe', 5 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko; Google Web Preview) Chrome/22.0.1229 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.56 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux armv6l', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,667598,841, 'Mozilla/5.0 (X11; Linux armv6l) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.79 Safari/537.4,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Jolicloud Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Jolicloud Linux i686) AppleWebKit/537.6 (KHTML, like Gecko) Joli OS/1.2 Chromium/23.0.1240.0 Chrome/23.0.1240.0 Safari/537.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Jolicloud Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Jolicloud Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Joli OS/1.2 Chromium/21.0.1180.79 Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux x8664\\', 2 => 'KHTML like Gecko\\'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 \\(X11; Linux x8664\\) AppleWebKit/537.1 \\(KHTML like Gecko\\) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1096.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1096.1) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1096.1 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1105.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1105.2) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1105.2 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.17', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.17) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.17 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.43', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.43) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.47', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.47', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/20.0.1132.47) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.57', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => ' chromeframe/20.0.1132.57', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64; chromeframe/20.0.1132.57) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.21', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.21) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.21 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' chromeframe/20.0.1132.27', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,612794,841, 'Mozilla/5.0 (Windows NT 6.0; chromeframe/20.0.1132.27) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.27 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,744007,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,744007,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,744007,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.97 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => ' Avant TriCore', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64; Avant TriCore) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,632282,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2876.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2876.0.0) AppleWebKit/537.10 (KHTML, like Gecko) Chrome/23.0.1262.2 Safari/537.10');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2876.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2876.0.0) AppleWebKit/537.10 (KHTML, like Gecko) Chrome/23.0.1262.2 Safari/537.10');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.49.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.49.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.19 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.49.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.49.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.19 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.50.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.50.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.19 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.21.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.21.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.8 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.27.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.27.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.11 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.27.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.27.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.11 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.3.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.3.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.2 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.3.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.3.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.2 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.41.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.41.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.16 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.73.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.73.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.30 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.73.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.73.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.30 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.106.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.106.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.41 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.106.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.106.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.41 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.84.10', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.84.10) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.49 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.135.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.135.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.53 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.135.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.135.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.53 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.157.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.157.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.83 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.156.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.156.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.83 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.156.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.156.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.83 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.41.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.41.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.16 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.135.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.135.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.53 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.166.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.166.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.84 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.166.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.166.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.84 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.168.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.168.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.84 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.187.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.187.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.89 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.187.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.187.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.89 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.156.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.156.1) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.83 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.187.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.187.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.89 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.181.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.181.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.87 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.53.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.53.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.20 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.224.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.224.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.94 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.224.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.224.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.94 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.224.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.224.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.94 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.120.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.120.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.49 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.200.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.200.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.92 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.251.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.251.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.260.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.260.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.99 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.260.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.260.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.99 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.276.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.276.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.110 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.260.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.260.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.99 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.270.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.270.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.110 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.212.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.212.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.93 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.278.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.278.2) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.110 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.225.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.225.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.94 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2913.331.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS x86_64 2913.331.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.111 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.331.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.331.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.111 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.331.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.331.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.111 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2913.345.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS i686 2913.345.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.113 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 2913.345.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,673603,841, 'Mozilla/5.0 (X11; CrOS armv7l 2913.345.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.113 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,612794,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,612794,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686 (x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,612794,841, 'Mozilla/5.0 (X11; Linux i686 (x86_64)) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,612794,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux armv6l', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,612794,841, 'Mozilla/5.0 (X11; Linux armv6l) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_2) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.57 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.57 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_7) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_6) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_5) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_4) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via docs.google.com/viewer'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.90 Safari/537.1,gzip(gfe) (via docs.google.com/viewer)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,632282,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.57 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.2; WOW64) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.2) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1410.12', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1410.12) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.12 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1410.19', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1410.19) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.19 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1410.28', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1410.28) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1410.33', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1410.33) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1386.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1386.0) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 5.1', 1 => ' chromeframe/26.0.1410.40', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,771690,841, 'Mozilla/5.0 (Windows NT 5.1; chromeframe/26.0.1410.40) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.40 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3196.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3196.1.0) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1324.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3196.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3196.1.0) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1324.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3196.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3196.2.0) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1324.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3196.4.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3196.4.0) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1324.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3196.3.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3196.3.0) AppleWebKit/537.19 (KHTML, like Gecko) Chrome/25.0.1324.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3337.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3337.1.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1347.5 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3337.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3337.1.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1347.5 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3337.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3337.1.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1347.5 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3379.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3379.2.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1354.2 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3379.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3379.2.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1354.2 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3379.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3379.2.0) AppleWebKit/537.21 (KHTML, like Gecko) Chrome/25.0.1354.2 Safari/537.21');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.0.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.2 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.0.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.2 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.0.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.2 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3417.0.2012', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3417.0.2012) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1363.0 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.49.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.49.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.49.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.49.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.49.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.49.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.26 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.65.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.65.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.33 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.65.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.65.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.33 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.65.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.65.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.33 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.92.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.92.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.46 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.92.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.92.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.46 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.94.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.94.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.49 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.77.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.77.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.40 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.114.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.114.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.63 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.110.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.110.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.57 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.127.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.127.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.68 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.127.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.127.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.68 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.127.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.127.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.68 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.149.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.149.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.87 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.131.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.131.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.74 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.149.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.149.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.87 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.149.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.149.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.87 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.167.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.167.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.91 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.149.2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.149.2) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.87 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.193.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.193.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.126 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.193.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.193.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.126 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.193.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.193.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.126 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3428.210.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS x86_64 3428.210.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.173 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3428.210.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS i686 3428.210.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.173 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' CrOS armv7l 3428.210.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,744007,841, 'Mozilla/5.0 (X11; CrOS armv7l 3428.210.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.173 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.40 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,771690,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,771690,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_6) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_5) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_4) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_7) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.43 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,771690,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Windows NT 6.0', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,771690,841, 'Mozilla/5.0 (Windows NT 6.0; WOW64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_0) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_4) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_7_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,369522,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,612794,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,612794,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.2', 1 => 'KHTML, like Gecko', 2 => 'gzip(gfe', 3 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,612794,841, 'Mozilla/5.0 (Windows NT 6.2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.2', 1 => ' WOW64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,303357,612794,841, 'Mozilla/5.0 (Windows NT 6.2; WOW64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2430.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2430.0.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1172.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2430.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2430.0.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1172.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.19.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.19.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.9 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.30.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.30.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.18 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.62.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.62.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.41 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.55.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.55.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.33 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.82.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.82.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.50 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.82.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.82.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.50 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.97.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.97.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.55 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.97.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.97.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.55 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.62.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.62.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.41 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.30.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.30.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.18 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.105.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.105.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.68 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.116.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.116.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.78 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.105.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.105.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.68 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.127.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.127.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.127.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.127.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.83 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.121.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.121.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.121.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.121.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.116.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.116.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.78 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.163.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.163.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.91 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.142.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.142.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.148.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.148.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.148.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.148.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.142.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.142.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.163.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.163.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.91 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.211.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.211.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.211.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.211.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.173.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.173.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.91 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.228.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.228.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2465.227.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS i686 2465.227.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.227.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.227.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2465.238.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,632282,841, 'Mozilla/5.0 (X11; CrOS x86_64 2465.238.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.92 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_8) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_7', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_7) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_6', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_6) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_3) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_0) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.19 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_5', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_5) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_2) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_6_4', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,191337,771690,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_6_4) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.33 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_1) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_3', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,612794,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_3) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,771690,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.27 (KHTML, like Gecko) Chrome/26.0.1386.0 Safari/537.27');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '26.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,139063,771690,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.31 (KHTML, like Gecko) Chrome/26.0.1410.28 Safari/537.31');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe', 4 => 'via translate.google.com'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11,gzip(gfe) (via translate.google.com)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux armv7l', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,612794,841, 'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2069.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2069.0.0) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1088.0 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2093.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2093.0.0) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1093.0 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2108.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2108.0.0) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1096.1 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2125.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2125.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1098.0 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2110.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2110.0.0) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1096.1 Safari/536.6');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2131.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2131.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1099.0 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2132.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2132.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1099.1 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2130.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2130.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1098.3 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2129.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2129.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1098.2 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2126.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2126.0.0) AppleWebKit/536.7 (KHTML, like Gecko) Chrome/20.0.1098.0 Safari/536.7');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2153.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2153.0.0) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1105.0 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2168.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2168.0.0) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1110.0 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2170.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2170.0.0) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1111.1 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2179.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2179.0.0) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1113.0 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2183.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2183.0.0) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1114.0 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2164.0.2012', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2164.0.2012) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1108.0 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2199.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2199.0.0) AppleWebKit/536.9 (KHTML, like Gecko) Chrome/20.0.1116.0 Safari/536.9');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2227.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2227.1.0) AppleWebKit/536.10 (KHTML, like Gecko) Chrome/20.0.1123.3 Safari/536.10');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.0.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.1 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2237.0.2012', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2237.0.2012) AppleWebKit/536.10 (KHTML, like Gecko) Chrome/20.0.1125.0 Safari/536.10');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.9.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.9.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.7 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.16.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.16.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.11 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.23.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.23.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.15 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.42.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.42.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.22 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.42.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.42.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.22 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.70.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.70.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.34 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.70.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.70.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.34 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.85.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.85.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.37 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.85.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.85.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.37 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.105.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.105.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.54 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.105.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.105.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.54 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.111.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.111.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.111.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2268.124.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2268.124.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.59 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2268.124.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS x86_64 2268.124.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.59 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2141.0.2012', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,612794,841, 'Mozilla/5.0 (X11; CrOS i686 2141.0.2012) AppleWebKit/536.8 (KHTML, like Gecko) Chrome/20.0.1102.0 Safari/536.8');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.10 Chromium/22.0.1229.94 Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.10 Chromium/22.0.1229.94 Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux armv7l', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,667598,841, 'Mozilla/5.0 (X11; Linux armv7l) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.10 Chromium/22.0.1229.94 Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko', 3 => 'gzip(gfe'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.10 Chromium/22.0.1229.94 Chrome/22.0.1229.94 Safari/537.4,gzip(gfe)');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2650.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2650.0.0) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1215.0 Safari/537.2');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2628.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2628.0.0) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1210.0 Safari/537.2');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2628.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2628.0.0) AppleWebKit/537.2 (KHTML, like Gecko) Chrome/22.0.1210.0 Safari/537.2');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2694.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2694.0.0) AppleWebKit/537.3 (KHTML, like Gecko) Chrome/22.0.1222.0 Safari/537.3');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2694.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2694.0.0) AppleWebKit/537.3 (KHTML, like Gecko) Chrome/22.0.1222.0 Safari/537.3');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.18.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.18.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.8 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.25.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.25.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.12 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.18.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.18.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.8 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.0.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.0 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.0.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.0.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.0 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.37.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.37.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.21 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.37.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.37.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.21 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.50.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.50.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.50.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.50.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.50.1', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.50.1) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.50.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.50.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.52.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.52.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.26 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 2723.63.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS x86_64 2723.63.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.33 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 2723.63.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,667598,841, 'Mozilla/5.0 (X11; CrOS i686 2723.63.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.33 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,673603,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,632282,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_8_2', 2 => ' facebookexternalhit', 3 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,572140,709752,506051, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_2; facebookexternalhit)AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1309.0Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,709752,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/537.17 (KHTML, like Gecko) Chrome/24.0.1312.57 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,744007,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 5.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,673603,841, 'Mozilla/5.0 (Windows NT 5.0) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,632282,841, 'Mozilla/5.0 (Windows NT 5.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Randomized by FreeSafeIP.com/upgrade-to-remove', 1 => ' compatible', 2 => ' MSIE 7.0', 3 => ' Windows NT 5.0'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,632282,841, 'Mozilla/5.0 (Randomized by FreeSafeIP.com/upgrade-to-remove; compatible; MSIE 7.0; Windows NT 5.0) Chrome/21.0.1229.79');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,667598,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'Windows NT 5.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,744007,841, 'Mozilla/5.0 (Windows NT 5.0) AppleWebKit/537.22 (KHTML, like Gecko) Chrome/25.0.1364.172 Safari/537.22');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 5.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,667598,841, 'Mozilla/5.0 (Windows NT 5.0) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Randomized by FreeSafeIP.com/upgrade-to-remove', 1 => ' compatible', 2 => ' MSIE 7.0', 3 => ' Windows NT 5.0'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,667598,841, 'Mozilla/5.0 (Randomized by FreeSafeIP.com/upgrade-to-remove; compatible; MSIE 7.0; Windows NT 5.0) Chrome/22.0.1229.79');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'Windows NT 4.10', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,552940,673603,841, 'Mozilla/5.0 (Windows NT 4.10) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 4.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,353937,612794,841, 'Mozilla/5.0 (Windows NT 4.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 4.10', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,552940,632282,841, 'Mozilla/5.0 (Windows NT 4.10) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,612794,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.10 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,612794,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/536.11 (KHTML, like Gecko) Ubuntu/12.10 Chromium/20.0.1132.47 Chrome/20.0.1132.47 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/12.04 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 5.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,612794,841, 'Mozilla/5.0 (Windows NT 5.0) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Randomized by FreeSafeIP.com/upgrade-to-remove', 1 => ' compatible', 2 => ' MSIE 7.0', 3 => ' Windows NT 5.0'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,65677,612794,841, 'Mozilla/5.0 (Randomized by FreeSafeIP.com/upgrade-to-remove; compatible; MSIE 7.0; Windows NT 5.0) Chrome/20.0.1229.79');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Ubuntu/12.04 Chromium/21.0.1180.79 Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,632282,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.1 (KHTML, like Gecko) Ubuntu/12.04 Chromium/21.0.1180.79 Chrome/21.0.1180.79 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Windows NT 4.10', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,552940,667598,841, 'Mozilla/5.0 (Windows NT 4.10) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.04 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/12.04 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3083.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,709752,841, 'Mozilla/5.0 (X11; CrOS x86_64 3083.2.0) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.4 Safari/537.16');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3083.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,709752,841, 'Mozilla/5.0 (X11; CrOS i686 3083.1.0) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.3 Safari/537.16');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3083.2.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,709752,841, 'Mozilla/5.0 (X11; CrOS i686 3083.2.0) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.4 Safari/537.16');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' CrOS i686 3020.0.2012', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,709752,841, 'Mozilla/5.0 (X11; CrOS i686 3020.0.2012) AppleWebKit/537.13 (KHTML, like Gecko) Chrome/24.0.1290.1 Safari/537.13');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' CrOS x86_64 3083.1.0', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,542345,709752,841, 'Mozilla/5.0 (X11; CrOS x86_64 3083.1.0) AppleWebKit/537.16 (KHTML, like Gecko) Chrome/24.0.1305.3 Safari/537.16');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,673603,841, 'Mozilla/5.0 (X11; FreeBSD amd64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD i386', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,673603,841, 'Mozilla/5.0 (X11; FreeBSD i386) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/12.10 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/12.10 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko', 3 => '3.6.1-0ubuntu1'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.6+ (KHTML, like Gecko) Chromium/23.0.1271.95 Chrome/23.0.1271.95 Safari/537.6+ Ubuntu/12.10 (3.6.1-0ubuntu1) Epiphany/3.6.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 4.10', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,552940,612794,841, 'Mozilla/5.0 (Windows NT 4.10) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.6'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,693961,841, 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.75 Safari/537.1 Sleipnir/3.6.2');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.6'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,693961,841, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1 Sleipnir/3.6.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,667598,841, 'Mozilla/5.0 (X11; FreeBSD amd64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD i386', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,667598,841, 'Mozilla/5.0 (X11; FreeBSD i386) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD amd64', 2 => 'KHTML like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,667598,841, 'Mozilla/5.0 (X11; FreeBSD amd64) AppleWebKit/537.4 (KHTML like Gecko) Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,744007,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.19 (KHTML, like Gecko) Ubuntu/12.10 Chromium/25.0.1323.1 Chrome/25.0.1323.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '25.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,744007,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.19 (KHTML, like Gecko) Ubuntu/12.10 Chromium/25.0.1323.1 Chrome/25.0.1323.1 Safari/537.19');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,709752,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu/12.04 Chromium/24.0.1312.2 Chrome/24.0.1312.2 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,597796,709752,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu/12.04 Chromium/24.0.1312.2 Chrome/24.0.1312.2 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'Macintosh', 1 => ' Intel Mac OS X 10_5_8', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(60425,61354,667598,841, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_5_8) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/22.0.1183.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,612794,841, 'Mozilla/5.0 (X11; FreeBSD amd64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD i386', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,612794,841, 'Mozilla/5.0 (X11; FreeBSD i386) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,632282,841, 'Mozilla/5.0 (X11; FreeBSD amd64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' FreeBSD i386', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,509648,632282,841, 'Mozilla/5.0 (X11; FreeBSD i386) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Nutch-1.4')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,497954, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 (KHTML, like Gecko) Chrome/20.0.1092.0 Safari/536.6/Nutch-1.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'Windows NT 6.1', 1 => ' WOW64', 2 => ' like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => array(0 => 'Nutch-1.4')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,114029,612794,497954, '>Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/536.6 HTML, like Gecko) Chrome/20.0.1092.0 Safari/536.6/Nutch-1.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/10.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,528392,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/10.04 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/10.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,528392,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/10.04 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 5.1', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.6'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,44793,693961,841, 'Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1 Sleipnir/3.6.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,292349,673603,841, 'Mozilla/5.0 AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.64 Safari/537.11 iTunes/10.7 Downcast/2.7.13.1002');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/11.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,557712,673603,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/11.10 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/11.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,557712,673603,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.11 (KHTML, like Gecko) Ubuntu/11.10 Chromium/23.0.1271.64 Chrome/23.0.1271.64 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'SaferSurf', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,21108,632282,841, 'Mozilla/5.0 (SaferSurf) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1165.0 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/11.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,557712,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Ubuntu/11.10 Chromium/21.0.1180.89 Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'X11', 1 => ' OpenBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,539206,612794,841, 'Mozilla/5.0 (X11; OpenBSD amd64) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.57 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'Windows NT 6.0', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => array(0 => 'Sleipnir/3.6'), 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,64735,693961,841, 'Mozilla/5.0 (Windows NT 6.0) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.60 Safari/537.1 Sleipnir/3.6.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/11.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,557712,667598,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/11.10 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/11.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,557712,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/11.10 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '23.0'), 1 => array(0 => 'X11', 1 => ' OpenBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,539206,673603,841, 'Mozilla/5.0 (X11; OpenBSD amd64) AppleWebKit/537.11 (KHTML, like Gecko) Chrome/23.0.1271.97 Safari/537.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '24.0'), 1 => array(0 => 'X11', 1 => ' Linux x86_64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/12.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,673052,709752,841, 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.17 (KHTML, like Gecko) Ubuntu/12.10 Chromium/24.0.1312.2 Chrome/24.0.1312.2 Safari/537.17');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '20.0'), 1 => array(0 => 'SaferSurf', 1 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,21108,612794,841, 'Mozilla/5.0 (SaferSurf) AppleWebKit/536.11 (KHTML, like Gecko) Chrome/20.0.1132.21 Safari/536.11');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/10.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,528392,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/10.04 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/10.10'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,530339,667598,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.4 (KHTML, like Gecko) Ubuntu/10.10 Chromium/22.0.1229.79 Chrome/22.0.1229.79 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '22.0'), 1 => array(0 => 'X11', 1 => ' OpenBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,539206,667598,841, 'Mozilla/5.0 (X11; OpenBSD amd64) AppleWebKit/537.4 (KHTML, like Gecko) Chrome/22.0.1229.94 Safari/537.4');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' Linux i686', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => array(0 => 'Ubuntu/10.04'), 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,528392,632282,841, 'Mozilla/5.0 (X11; Linux i686) AppleWebKit/537.1 (KHTML, like Gecko) Ubuntu/10.04 Chromium/21.0.1180.89 Chrome/21.0.1180.89 Safari/537.1');
+    $ls = $ns;
+  }
+  $ns = E47($segments, array(0 => array(0 => '21.0'), 1 => array(0 => 'X11', 1 => ' OpenBSD amd64', 2 => 'KHTML, like Gecko'), 2 => NULL, 3 => NULL, 4 => NULL, 5 => NULL), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,539206,632282,841, 'Mozilla/5.0 (X11; OpenBSD amd64) AppleWebKit/537.1 (KHTML, like Gecko) Chrome/21.0.1180.89 Safari/537.1');
     $ls = $ns;
   }
   return $dl;
