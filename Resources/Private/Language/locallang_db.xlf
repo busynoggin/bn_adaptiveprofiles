@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-29T01:19:09Z" product-name="bn_adaptiveprofiles">
+		<header/>
+		<body>
+			<trans-unit id="tx_bnadaptiveprofiles_profile" xml:space="preserve">
+				<source>Profile</source>
+			</trans-unit>
+			<trans-unit id="tx_bnadaptiveprofiles_profile.name" xml:space="preserve">
+				<source>Name</source>
+			</trans-unit>
+			<trans-unit id="tx_bnadaptiveprofiles_profile.minimum_width" xml:space="preserve">
+				<source>Minimum Width</source>
+			</trans-unit>
+			<trans-unit id="tx_bnadaptiveprofiles_profile.maximum_width" xml:space="preserve">
+				<source>Maximum Width</source>
+			</trans-unit>
+			<trans-unit id="tx_bnadaptiveprofiles_profile.is_default_profile" xml:space="preserve">
+				<source>Is Default Profile?</source>
+			</trans-unit>
+			<trans-unit id="tt_content.only_show_in_profiles" xml:space="preserve">
+				<source>Only Show in Selected Profiles</source>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

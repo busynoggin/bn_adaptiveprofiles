@@ -1,6 +1,8 @@
 <?php
 
-class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
+namespace BusyNoggin\BnAdaptiveprofiles\Service;
+
+class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	protected $screenWidth = NULL;
 	protected $defaultProfile = NULL;
@@ -146,7 +148,7 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 * @return integer
 	 */
 	protected function getScreenWidthFromUserAgent() {
-		$pathTo51Degrees = t3lib_extMgm::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
 		include_once($pathTo51Degrees . '51Degrees.mobi.php');
 		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
 		if ($_51d['ScreenPixelsWidth'] && $_51d['ScreenPixelsWidth'] !== 'Unknown') {
@@ -166,7 +168,7 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
  * @return boolean
  */
 function user_hasProfile($profileName) {
-	$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
+	$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 	return $profileService->hasProfile($profileName);
 }
 
