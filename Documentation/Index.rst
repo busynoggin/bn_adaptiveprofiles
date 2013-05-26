@@ -12,16 +12,41 @@ Adaptive Profiles
 ================================
 
 
-:Extension name: |Adaptive Profiles|
-:Extension key: |bn_adaptiveprofiles|
-:Version: 1.0.0
-:Description: Manual for the TYPO3 extension "|Adaptive Profiles|" and its application
-:Language: en
-:Author: |Jeff Segars|
-:Company: |Busy Noggin Digital|
-:Creation: May 15, 2013
-:Generation: |time|
-:License: Open Content License available from `www.opencontent.org/opl.shtml <http://www.opencontent.org/opl.shtml>`_
+:Extension name:
+    Adaptive Profiles
+
+:Extension key:
+    bn_adaptiveprofiles
+
+:Version:
+    1.0.0
+
+:Description:
+    Manual for the TYPO3 extension "Adaptive Profiles" and its application
+
+:Author:
+    Jeff Segars
+
+:Company:
+    Busy Noggin Digital
+
+:Website:
+    `www.busynoggin.com <http://www.busynoggin.com/>`_
+
+:Email:
+    extensions@busynoggin.com
+
+:Language:
+    en
+
+:Creation:
+    May 15, 2013
+
+:Rendered:
+    |today|
+
+:License:
+    Open Content License available from `www.opencontent.org/opl.shtml <http://www.opencontent.org/opl.shtml>`_
 
 The content of this document is related to TYPO3, a GNU/GPL CMS/Framework available from `www.typo3.org
 <http://www.typo3.org/>`_
@@ -34,8 +59,5 @@ The content of this document is related to TYPO3, a GNU/GPL CMS/Framework availa
 
     Introduction
     InstallationSetup
+    UsersManual/Index
     Configuration
-    Extras
-
-// @todo-ron need to finish
-

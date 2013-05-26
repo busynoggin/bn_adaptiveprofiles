@@ -12,19 +12,14 @@
 Installation & Setup
 ================================
 
-Before you begin:
-================================
-
 -   Make sure you are running on TYPO3 6.1 or above
--   Install the latest version of the TemplaVoila extension (templavoila)
+-   Install the Adaptive Profiles extension (bn_adaptiveprofiles)
+-	In the extension manager, click the configuration icon for Adaptive Profiles. Set the basic Default Screen Width. This almost always should be 1024. Also, indicate whether you want content elements to be filtered by Adaptive Profiles.
 
-Installing Adaptive Profiles
-================================
+.. figure:: Images/ConfigurationGear.png
+	:alt: Configuration Icon
+	:align: left
 
-Setting Up Adaptive Profiles
-================================
-
-// @todo-ron screenshots
-
-// @todo-ron need to finish
-
+.. figure:: Images/EMOptions.png
+	:alt: Extension Manger Options
+	:align: left

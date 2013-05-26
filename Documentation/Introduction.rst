@@ -13,6 +13,10 @@
 What does it do?
 ================================
 
+The Adaptive Profiles is for sensing the clients device screen widht and matching that to a custom profile. The rendering of the page is governed by that profile. This is a way to approach responsive and adaptive designs.
+
+It was specifically developed by Busy Noggin to work with the TemplaVoila Framework extension but can be used with any TYPO3 templating approach.
+
 ================================
 Project Information
 ================================
@@ -20,25 +24,33 @@ Project Information
 Contact
 ================================
 
-You can contact the developers at extensions@busynoggin.com.
+You can contact the developer at extensions@busynoggin.com.
 
 Reporting Bugs
 ================================
 
-You can find the TemplaVoila Framework project on Forge.
-
-// @todo-ron  link to forge
+You can report bugs and suggest features for the TemplaVoila Framework project on `Forge <http://forge.typo3.org/projects/show/extension-bn_adaptiveprofiles/>`_.
 
 Known Issues
 ================================
 
 No known issues
 
-// @todo-ron what about load order with like timtab or other
-
 Releases & Changelog
 ================================
 
-// @todo-ron    put in release history
+.. list-table::
+    :widths: 30 70
+    :header-rows: 1
 
-// @todo-ron need to finish
+    *
+        -
+            version
+        -
+            changes
+
+    *
+        -
+            1.0.0
+        -
+            Initial release

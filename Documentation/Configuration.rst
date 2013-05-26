@@ -9,47 +9,8 @@
 
 
 =========================
-Constants
+Configuration
 =========================
 
-..  list-table::
-    :widths: 20 60 20
-    :header-rows: 1
-
-    *
-        - property
-        - details
-        - default
-
-    *
-        -
-            renderMode
-        -
-            Description
-                This constant must be at the beginning of your skin constants. It tells the Framework which rendering to use.
-        -
-            Null
-
-
-=========================
-TypoScript
-=========================
-
-..  list-table::
-    :widths: 20 60 20
-    :header-rows: 1
-
-    *
-        - property
-        - details
-        - default
-
-    *
-        -
-            renderMode
-        -
-            Description
-                This constant must be at the beginning of your skin constants. It tells the Framework which rendering to use.
-        -
-            Null
+There is no TypoScript configuration. All configuration is handled in the extension manager.
 

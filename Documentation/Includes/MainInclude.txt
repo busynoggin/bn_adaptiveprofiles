@@ -19,10 +19,3 @@
 .. role::   php(code)
 
 .. highlight:: guess
-
-.. @todo-ron Wondering if I should use the following
-.. role:: raw-role(raw)
-	:format: html latex
-
-
-// @todo-ron need to finish
