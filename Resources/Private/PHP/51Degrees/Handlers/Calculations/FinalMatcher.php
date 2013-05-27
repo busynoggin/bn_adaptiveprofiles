@@ -1,16 +1,9 @@
 <?php
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 /**
- * FUNCTION DOCUMENTATION.
+ * Todo.
  */
 function fiftyone_degrees_finalMatcher(&$user_agent, &$results) {
   $results = fiftyone_degrees_sort_results($results);
@@ -38,7 +31,7 @@ function fiftyone_degrees_finalMatcher(&$user_agent, &$results) {
 }
 
 /**
- * FUNCTION DOCUMENTATION.
+ * Todo.
  */
 function fiftyone_degrees_match_tails(&$useragent, &$pos, &$devices) {
   $longest_subset = 0;
@@ -83,7 +76,7 @@ function fiftyone_degrees_match_tails(&$useragent, &$pos, &$devices) {
 }
 
 /**
- * FUNCTION DOCUMENTATION.
+ * Todo.
  */
 function fiftyone_degrees_ends_with($full_string, $find) {
   $length = strlen($find);
@@ -92,7 +85,7 @@ function fiftyone_degrees_ends_with($full_string, $find) {
 }
 
 /**
- * FUNCTION DOCUMENTATION.
+ * Todo.
  */
 function fiftyone_degrees_sort_results($results) {
   $to_sort = array();

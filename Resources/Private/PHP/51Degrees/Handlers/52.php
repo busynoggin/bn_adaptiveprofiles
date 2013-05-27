@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -44,14 +37,23 @@ function E52($target, $test, $ls) {
 function _H52($useragent) {
   $ls = PHP_INT_MAX;
   $dl = array();
-  $ua = 'Mitsu-M120770/(2003.12.2)VER_EN_05.23/WAP1.2.1 Profile/MIDP-1.0 Configuration/CLDC-1.0';
+  $ua = 'Grundig GR660/2.22.5.102 Mozilla/4.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 4.01; Windows CE; PPC; 240x320)';
   $ns = E52($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15364,17017,17470,18092, $ua);
+    $dl[] = array(34682,16143,82449,841, $ua);
+  }
+  $ua = 'Grundig GR980/1.30.152 Mozilla/4.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (compatible; MSIE 4.01; Windows CE; PPC; 640X480)';
+  $ns = E52($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(34682,16143,82449,841, $ua);
   }
   return $dl;
 }

@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -31,23 +24,7 @@
  */
 function E95($target, $test, $ls) {
   $score = 0;
-  fiftyone_degrees_calculate_segment_score($target[0], $test[0], $ls, 100000, $score);
-  if ($score == PHP_INT_MAX) {
-    return PHP_INT_MAX;
-  }
-  fiftyone_degrees_calculate_segment_score($target[1], $test[1], $ls, 100000, $score);
-  if ($score == PHP_INT_MAX) {
-    return PHP_INT_MAX;
-  }
-  fiftyone_degrees_calculate_segment_score($target[2], $test[2], $ls, 10000, $score);
-  if ($score == PHP_INT_MAX) {
-    return PHP_INT_MAX;
-  }
-  fiftyone_degrees_calculate_segment_score($target[3], $test[3], $ls, 10000, $score);
-  if ($score == PHP_INT_MAX) {
-    return PHP_INT_MAX;
-  }
-  fiftyone_degrees_calculate_segment_score($target[4], $test[4], $ls, 10000, $score);
+  fiftyone_degrees_calculate_segment_score($target[0], $test[0], $ls, 1, $score);
   if ($score == PHP_INT_MAX) {
     return PHP_INT_MAX;
   }
@@ -70,417 +47,1797 @@ function _H95($useragent) {
 
   // Calculate the segments for the useragent.
   $segments = array(
-    0 => fiftyone_degrees_preg_match_all('#(?<=Thunderbird/)\\d+\\.\\d+#', $useragent),
-    1 => fiftyone_degrees_preg_match_all('#(?<=Mozilla/)\\d\\.\\d#', $useragent),
-    2 => fiftyone_degrees_preg_match_all('#(?<=Mozilla/\\d\\.\\d \\()[^;\\)]+#', $useragent),
-    3 => fiftyone_degrees_preg_match_all('#Windows NT \\d\\.\\d(?=;)|Mac OS X [^\\s]+(?=;)|Ubuntu|X11#', $useragent),
-    4 => fiftyone_degrees_preg_match_all('#(?<=(Fedora)/)\\d+\\.\\d+#', $useragent));
-  $ns = E95($segments, array(0 => array(0 => '0.9'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+    0 => fiftyone_degrees_preg_match_all('#(SoftBank|Vodafone|J-PHONE)\\/\\d\\.\\d\\/\\w+#', $useragent));
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/0Vodafone543')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,17470,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/X Thunderbird/0.9');
+    $dl[] = array(34682,21108,47111,841, 'Vodafone/1.0/0Vodafone543/W08.40.SP1.V32.F3 Browser/Opera Mini/v4.2.0099-2010-04-14(0)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18199,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.8.1.6) Gecko/X Thunderbird/2.0.0.6');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJF4 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.2'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18199,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.8.1.23) Gecko/X Thunderbird/2.0.0.23');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300i/BUKA1 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X Mach-O'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,18120,18199,18092, 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8.1.24) Gecko/X Thunderbird/2.0.0.24');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJG4 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => NULL, 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,18120,18199,18092, 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.19) Gecko/X Thunderbird/2.0.0.19');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJH1 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '11.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.1'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18329,18092, 'Mozilla/5.0 (Windows NT 5.1; rv:11.0) Gecko/X Thunderbird/11.0');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJG6 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '11.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.2'), 3 => array(0 => 'Windows NT 5.2'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18329,18092, 'Mozilla/5.0 (Windows NT 5.2; WOW64; rv:11.0) Gecko/X Thunderbird/11.0.1 Lightning/1.3');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJK1 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18198,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.2.28) Gecko/X Lightning/1.0b2 Thunderbird/3.1.20');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/BUJI1 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18199,18092, 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.8.1.16) Gecko/X Thunderbird/2.0.0.16');
+    $dl[] = array(121064,17935,16998,841, 'Vodafone/1.0/SAMSUNG-GT-C3300K/PIJI1 NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18199,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.8.1.17) Gecko/X Thunderbird/2.0.0.17');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/BUGB2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18198,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.9.2.28) Gecko/X Thunderbird/3.1.20');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/DBUGK1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0,gzip(gfe)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18198,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.9.2.28) Gecko/X Thunderbird/3.1.20');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250i/BAIC2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18197,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.9.1.5) Gecko/X Thunderbird/3.0');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/DBUHC1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18198,18092, 'Mozilla/5.0 (X11; U; Linux x86_64; en-US; rv:1.9.2.28) Gecko/X Thunderbird/3.1.20');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/DBUGK1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.0'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18191,18092, 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:10.0.2) Gecko/X Thunderbird/10.0.2 Lightning/1.2.1');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/BUGD1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.0'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18192,18092, 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:9.0) Gecko/X Thunderbird/9.0.1');
+    $dl[] = array(43491,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/AMGC1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '8.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.7'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17297,18368,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:8.0) Gecko/X Thunderbird/8.0');
+    $dl[] = array(140264,17935,18014,841, 'Vodafone/1.0/SAMSUNG-GT-E2550/XXJF5 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '8.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.0'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18368,18092, 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:8.0) Gecko/X Thunderbird/8.0');
+    $dl[] = array(140264,17935,18014,841, 'Vodafone/1.0/SAMSUNG-GT-E2550/XXJI1 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '8.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.6'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17296,18368,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:8.0) Gecko/X Thunderbird/8.0 Lightning/1.0');
+    $dl[] = array(140264,17935,18014,841, 'Vodafone/1.0/SAMSUNG-GT-E2550/XXJH3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18197,18092, 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.1.12) Gecko/X Lightning/1.0b1 Thunderbird/3.0.8');
+    $dl[] = array(140264,17935,18014,841, 'Vodafone/1.0/SAMSUNG-GT-E2550/XXJL2 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.6'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17296,18198,18092, 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.6; en-US; rv:1.9.2.8) Gecko/X Thunderbird/3.1.2');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUIA3 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.5'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17295,18198,18092, 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.2.15) Gecko/X Lightning/1.0b2 Thunderbird/3.1.9');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUIC6 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '2.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18199,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US; rv:1.8.1.23) Gecko/X Thunderbird/2.0.0.23');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUII1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.5'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17295,18197,18092, 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1.9) Gecko/X Thunderbird/3.0.4');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUJI1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '1.5'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18201,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8.0.10) Gecko/X Thunderbird/1.5.0.10');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUIJ1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.1'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18191,18092, 'Mozilla/5.0 (Windows NT 6.1; rv:10.0.1) Gecko/X Thunderbird/10.0.1 Lightning/1.2.1');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUKC1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18197,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.1; de; rv:1.9.1.16) Gecko/X Thunderbird/3.0.11');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUIG1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 5.2'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18197,18092, 'Mozilla/5.0 (Windows; U; Windows NT 5.2; en-US; rv:1.9.1.16) Gecko/X Thunderbird/3.0.11');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUJK1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18191,18092, 'Mozilla/5.0 (X11; Linux x86_64; rv:10.0) Gecko/X Thunderbird/10.0');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUIF3 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC3050')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18192,18092, 'Mozilla/5.0 (X11; Linux x86_64; rv:9.0) Gecko/X Thunderbird/9.0 Lightning/1.1');
+    $dl[] = array(25452,17935,18014,841, 'Vodafone/1.0/SamsungC3050/C3050BUID2 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.7'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17297,18192,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:9.0) Gecko/X Thunderbird/9.0.1 Lightning/1.1.1');
+    $dl[] = array(178812,5556,4620,841, 'Vodafone/1.0/LG-KP500/V10b/Teleca/WAP2.0 MIDP-2.0/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '6.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.0'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18194,18092, 'Mozilla/5.0 (Windows NT 6.0; WOW64; rv:6.0.2) Gecko/X Thunderbird/6.0.2');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '6.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.7'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17297,18194,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:6.0.2) Gecko/X Thunderbird/6.0.2');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10i Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.5'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17295,18192,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:9.0) Gecko/X Thunderbird/9.0.1 Lightning/1.1.1');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10h Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.1'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18192,18092, 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:9.0) Gecko/X Thunderbird/9.0.1 OracleBeehiveExtension/1.0.0.4-OracleInternal Lightning/1.1.1');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10c Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.6'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17296,18191,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.6; rv:10.0) Gecko/X Thunderbird/10.0 Lightning/1.2.1');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/v10b Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '6.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 6.1'), 3 => array(0 => 'Windows NT 6.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7133,18194,18092, 'Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:6.0.2) Gecko/X Thunderbird/6.0.2');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10j Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '7.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18193,18092, 'Mozilla/5.0 (X11; Linux i686; rv:7.0) Gecko/X Thunderbird/7.0');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10f Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.2'), 3 => array(0 => 'Windows NT 5.2'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18192,18092, 'Mozilla/5.0 (Windows NT 5.2; WOW64; rv:9.0) Gecko/X Thunderbird/9.0.1 Lightning/1.1.1');
+    $dl[] = array(100590,5556,99655,841, 'Vodafone/1.0/LG-KU990/V10g Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '9.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.1'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18192,18092, 'Mozilla/5.0 (Windows NT 5.1; rv:9.0) Gecko/X Thunderbird/9.0 Lightning/1.1.1');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.49.164.2 (71528) Opera/9.7 (Windows NT 5.1; U; es-ES)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18197,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.0; de; rv:1.9.1.9) Gecko/X Thunderbird/3.0.4');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC-HD2/1.44.163.3 (70494) Opera/9.7 (Windows NT 5.1;U;fr)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.1'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18191,18092, 'Mozilla/5.0 (Windows NT 5.1; rv:10.0) Gecko/X Thunderbird/10.0');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.72.162.0 (82124) Opera/9.7 (Windows NT 5.1; U; de)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.2'), 3 => array(0 => 'Windows NT 5.2'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18191,18092, 'Mozilla/5.0 (Windows NT 5.2; WOW64; rv:10.0.2) Gecko/X Thunderbird/10.0.2 Lightning/1.2.1');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.72.172.0 (82124) Opera/9.7 (Windows NT 5.1; U; nl)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '6.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.1'), 3 => array(0 => 'Windows NT 5.1'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,5690,18194,18092, 'Mozilla/5.0 (Windows NT 5.1; rv:6.0.2) Gecko/X Thunderbird/6.0.2 OracleBeehiveExtension/1.0.0.4-OracleInternal Lightning/1.0b5');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.72.161.3 (82124) Opera/9.7 (Windows NT 5.1; U; en)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.5'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17295,18191,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.5; rv:10.0.1) Gecko/X Thunderbird/10.0.1');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.44.163.3 (70494) Opera/9.7 (Windows NT 5.1; U; fr)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '1.5'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows'), 3 => array(0 => 'Windows NT 6.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17285,18201,18092, 'Mozilla/5.0 (Windows; U; Windows NT 6.0; en-US; rv:1.8.0.10) Gecko/X Thunderbird/1.5.0.10');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/3.14.162.5 (04666) Opera/9.7 (Windows NT 5.1; U; de)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '5.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Windows NT 5.0'), 3 => array(0 => 'Windows NT 5.0'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,7127,18196,18092, 'Mozilla/5.0 (Windows NT 5.0; rv:5.0) Gecko/X Thunderbird/5.0');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/3.14.161.3 (04666) Opera/9.7 (Windows NT 5.1; U; en)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '10.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.7'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17297,18191,18092, 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.7; rv:10.0) Gecko/X Thunderbird/10.0 Lightning/1.2');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/3.14.163.3 (04666) Opera/9.7 (Windows NT 5.1; U; fr)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '6.0'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,18110,18194,18092, 'Mozilla/5.0 (X11; Linux i686; rv:6.0.2) Gecko/X Thunderbird/6.0.2');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/3.14.172.3 (04666) Opera/9.7 (Windows NT 5.1; U; nl)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'Macintosh'), 3 => array(0 => 'Mac OS X 10.7'), 4 => NULL), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(17595,17297,18198,18092, 'Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.7; en-US; rv:1.9.2.18) Gecko/X Thunderbird/3.1.11');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.72.164.4 (82124) Opera/9.7 (Windows NT 5.1; U; es-ES)');
     $ls = $ns;
   }
-  $ns = E95($segments, array(0 => array(0 => '3.1'), 1 => array(0 => '5.0'), 2 => array(0 => 'X11'), 3 => array(0 => 'X11'), 4 => array(0 => '3.1')), $ls);
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
     }
-    $dl[] = array(15364,17866,18198,18092, 'Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.9.2.17) Gecko/X Fedora/3.1.10-1.fc14 Thunderbird/3.1.10');
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.44.172.7 (70494) Opera/9.7 (Windows NT 5.1; U; nl)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/1.44.162.6 (70494) Opera/9.7 (Windows NT 5.1; U; de)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(6571,16143,50422,841, 'Vodafone/1.0/HTC_HD2/3.14.164.4 (04666) Opera/9.7 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Pro2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(91387,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Pro2/1.86.161.1 (67102) Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Pro2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(91387,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Pro2/1.86.161.0 (67102) Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Pro2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(91387,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Pro2/1.14.161.6 (50207) Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Pro2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(91387,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Pro2/1.14.161.5 (50207) Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120200,17935,18014,841, 'Vodafone/1.0/SAMSUNG-B2100V/BUIA2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120200,17935,18014,841, 'Vodafone/1.0/SAMSUNG-B2100/BUIC6 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120200,17935,18014,841, 'Vodafone/1.0/SAMSUNG-B2100/BUJA1 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120200,17935,18014,841, 'Vodafone/1.0/SAMSUNG-B2100/BUIF2 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(143122,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700i/BUIE2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(143122,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700i/JBID1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(143122,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700i/BUIC2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(84926,16143,19166,841, 'Vodafone/1.0/HTC_Touch2/1.29.176.2 (67024) Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(113038,5556,99655,841, 'Vodafone/1.0/LG-KU990i/V10a Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(113038,5556,99655,841, 'Vodafone/1.0/LG-KU990i/V10c Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(113038,5556,99655,841, 'Vodafone/1.0/LG-KU990i/V10d Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(113038,5556,99655,841, 'Vodafone/1.0/LG-KU990i/V10b Browser/Obigo-Q05A/3.6 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,6643,13185,841, 'Vodafone/1.0/SEX1i/R1AA Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,6643,13185,841, 'Vodafone/1.0/SEX1i/R1AA Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,6643,13185,841, 'Vodafone/1.0/SEX1i/R3AA Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) UP.Link/6.3.1.20.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,6643,13185,841, 'Vodafone/1.0/SEX1i/R3AA Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)  Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,6643,13185,841, 'Vodafone/1.0/SEX1i/R1AA Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11)  Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Diamond')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(106082,16143,19166,841, 'Vodafone/1.0/HTC_Diamond Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Diamond')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(106082,16143,19166,841, 'Vodafone/1.0/HTC_Diamond/1.93.164.1 Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Diamond_II_T5353')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(106082,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Diamond_II_T5353/1.03.164.1 (40543) Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Diamond2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120344,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Diamond2 Opera/9.50 (Windows NT 5.1; U; de)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Diamond2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120344,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Diamond2 Opera/9.50 (Windows NT 5.1; U; nl)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Diamond2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(120344,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Diamond2/2.16.164.1 (67041) Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungS3500')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(43419,17935,22353,841, 'Vodafone/1.0/SamsungS3500/S3500BUIB3 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.11.164.1 (87733)/(Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.10.161.1 (86611)/(Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.41.161.1 (10904)/(Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.11.162.1 (87652)/(Windows NT 5.1; U; de)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.41.162.1 (10904)/(Windows NT 5.1; U; de)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_HD_mini')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(127233,16143,50422,841, 'Vodafone/1.0/HTC_HD_mini/Opera 9.7/1.36.184.2 (94538)/(Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(88567,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-M200/AMHI4/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(43491,17935,27772,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/DBUGK1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(43491,17935,27772,841, 'Vodafone/1.0/SAMSUNG-SGH-E250V/BUGD1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(154544,6643,6649,841, 'Vodafone/1.0/SAMSUNG-GT-B7350/BUJF4 Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.5)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(154544,6643,6649,841, 'Vodafone/1.0/SAMSUNG-GT-B7350/BUJG5 Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.5)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(71394,17935,19166,841, 'Vodafone/1.0/SAMSUNG-GT-B7610/NBUIH1 Browser/Opera/9.5 Profile/MIDP-2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(71394,17935,19166,841, 'Vodafone/1.0/SAMSUNG-GT-B7610/NBUIK3 Browser/Opera/9.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(129806,17935,18014,841, 'Vodafone/1.0/SAMSUNG-E1360B/ARID1/1.0 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/BUHA3/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/JBHC1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/BUHG1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/BUHB2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/BUHB1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/AMHB2/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,18014,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/AEHE1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Touch_Pro')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(108156,16143,19166,841, 'Vodafone/1.0/HTC_Touch_Pro Opera/9.50 (Windows NT 5.1; U; en)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(71394,6643,5635,841, 'Vodafone/1.0/SAMSUNG-GT-B7610/NBUIK3 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(71394,6643,5635,841, 'Vodafone/1.0/SAMSUNG-GT-B7610/NBUIK1 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(71394,6643,5635,841, 'Vodafone/1.0/SAMSUNG-GT-B7610/NBUIL1 (compatible; MSIE 6.0; Windows CE; IEMobile 8.12; MSIEMobile 6.0)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Jade')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(133598,16143,19166,841, 'Vodafone/1.0/HTC_Jade/1.06.164.1 Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Jade')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(133598,16143,19166,841, 'Vodafone/1.0/HTC_Jade/1.40. 164.2 Opera/9.50 (Windows NT 5.1; U; es-ES)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC6625')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(164906,6643,13185,841, 'Vodafone/1.0/SamsungC6625/BUIF2 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC6625')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(164906,6643,13185,841, 'Vodafone/1.0/SamsungC6625/BUID1 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC6625')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(164906,6643,13185,841, 'Vodafone/1.0/SamsungC6625/BUIE1 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungC6625')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(164906,6643,13185,841, 'Vodafone/1.0/SamsungC6625/BUIH4 (compatible; MSIE 6.0; Windows CE; IEMobile 7.11) Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(129878,17935,18014,841, 'Vodafone/1.0/SAMSUNG-E1310B/BUIE1/1.0 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(129878,17935,18014,841, 'Vodafone/1.0/SAMSUNG-E1310B/AMIE1/1.0 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/740SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(170817,170810,35698,841, 'SoftBank/1.0/740SC/SCJ001 Browser/NetFront/3.3');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(177587,5556,112031,841, 'Vodafone/1.0/LG-HB620T/V10a Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(177587,5556,112031,841, 'Vodafone/1.0/LG-HB620T/V10b Browser/Obigo-Q05A/3.12 MMS/LG-MMS-V1.0/1.2 Java/ASVM/1.1 Profile/MIDP-2.1 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,16143,19166,841, 'Vodafone/1.0/SEX1i/R3AA Opera/9.5 (Microsoft Windows; PPC; Opera Mobi/15431; U; DE) UP.Link/6.3.1.20.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,16143,19166,841, 'Vodafone/1.0/SEX1i/R3AA Opera/9.5 (Microsoft Windows; PPC; Opera Mobi/15431; U; UK)  Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SEX1i')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(168506,16143,19166,841, 'Vodafone/1.0/SEX1i/R1AA Opera/9.5 (Microsoft Windows; PPC; Opera Mobi/2141; U; UK)  Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/821SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(326587,170810,35698,841, 'SoftBank/1.0/821SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(262333,5556,215915,841, 'Vodafone/1.0/LG-KU580/V10a Browser/Obigo-Q05A1/2.16 MMS/LG-MMS-V1.0/1.2 Java/LGVM/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 Ext-V-Profile/VSCL-2.0.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/920SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461633,292349,22353,841, 'SoftBank/1.0/920SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1 AppEngine-Google; (+http://code.google.com/appengine; appid: s~google.com:mobile-checker)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHX660V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(278865,17935,91531,841, 'Vodafone/1.0/SamsungSGHX660V/X660BUEK4/Browser/TSS/2.5 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHX660V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(278865,17935,91531,841, 'Vodafone/1.0/SamsungSGHX660V/X660BUEI2/Browser/TSS/2.5 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHX660V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(278865,17935,91531,841, 'Vodafone/1.0/SamsungSGHX660V/X660JBEK2/Browser/TSS/2.5 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/820SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(323774,170810,35698,841, 'SoftBank/1.0/820SC/SCJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHM300V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48118,17935,18014,841, 'Vodafone/1.0/SamsungSGHM300V/M300BUGF3/Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHM300V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48118,17935,18014,841, 'Vodafone/1.0/SamsungSGHM300V/M300BUGG2/Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHM300V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48118,17935,18014,841, 'Vodafone/1.0/SamsungSGHM300V/M300JBGF3/Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(206710,5556,215915,841, 'Vodafone/1.0/LG-KU380/V10a Browser/Obigo-Q05A1/2.16 MMS/LG-MMS-V1.0/1.2 MediaPlayer/LGPlayer/1.0 Java/ASVM/2.0.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/941P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,22353,841, 'SoftBank/1.0/941P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/830N')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,22353,841, 'SoftBank/1.0/830N/NJ003 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48334,17935,27772,841, 'Vodafone/1.0/SamsungSGH-i450/i450BUHD1 Java/VF-Java/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 UNTRUSTED/1.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/920SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(362173,170810,35698,841, 'SoftBank/1.0/920SC/SCJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHX680V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(230106,17935,46102,841, 'Vodafone/1.0/SamsungSGHX680V/X680BUFG4 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHM310V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48550,17935,18014,841, 'Vodafone/1.0/SamsungSGHM310V/M310BUHE5 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHM310V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(48550,17935,18014,841, 'Vodafone/1.0/SamsungSGHM310V/M310BUHF2 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/812SHs')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462065,170810,35698,841, 'SoftBank/1.0/812SHs/SHJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/812SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462065,170810,35698,841, 'SoftBank/1.0/812SH/SHJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/821SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464883,170810,22353,841, 'SoftBank/1.0/821SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/920SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461633,170810,22353,841, 'SoftBank/1.0/920SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/921SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461633,170810,22353,841, 'SoftBank/1.0/921SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/922SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461921,170810,22353,841, 'SoftBank/1.0/922SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_Mercury')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(327091,16143,82449,841, 'Vodafone/1.0/HTC_Mercury/1.20.161.6/Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; MIDP-2.0 Configuration/CLDC-1.1; PPC; 240x320)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/920P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(243519,170810,22353,841, 'SoftBank/1.0/920P/PJP23 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHJ600V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(251227,17935,46102,841, 'Vodafone/1.0/SamsungSGHJ600V/J600BUGH1 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHJ600V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(251227,17935,46102,841, 'Vodafone/1.0/SamsungSGHJ600V/J600BUGG1 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHJ600V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(251227,17935,46102,841, 'Vodafone/1.0/SamsungSGHJ600V/J600DUHC1 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/820SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464811,170810,22353,841, 'SoftBank/1.0/820SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/911SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(319636,170810,35698,841, 'SoftBank/1.0/911SH/SHJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/816SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462497,170810,22353,841, 'SoftBank/1.0/816SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/921T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462713,170810,35698,841, 'SoftBank/1.0/921T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHB520V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(245607,17935,18014,841, 'Vodafone/1.0/SamsungSGHB520V/B520BUHI1 Browser/Openwave/6.2.3 Profile/MIDP-2.0 Configuration/CLDC-1.1 UP.Browser/6.2.3.3.c.1.101 (GUI) MMP/2.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/910SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(326515,170810,35698,841, 'SoftBank/1.0/910SH/SHJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/002P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(384860,170810,22353,841, 'SoftBank/1.0/002P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/002Pe')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(384860,170810,22353,841, 'SoftBank/1.0/002Pe/PJP10/SNXXXXXXXXXXXXXXX Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/707SC2')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,35698,841, 'SoftBank/1.0/707SC2/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/811T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,35698,841, 'SoftBank/1.0/811T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/813SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,35698,841, 'SoftBank/1.0/813SH/SHJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHE570V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(147773,17935,46102,841, 'Vodafone/1.0/SamsungSGHE570V/E570AEGB1 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHE570V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(147773,17935,46102,841, 'Vodafone/1.0/SamsungSGHE570V/E570BUGA3 Browser/NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/913SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461777,170810,22353,841, 'SoftBank/1.0/913SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/708SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(287043,170810,35698,841, 'SoftBank/1.0/708SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/931SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(378487,170810,22353,841, 'SoftBank/1.0/931SC/SCJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/815T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464379,170810,35698,841, 'SoftBank/1.0/815T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/822SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464955,170810,22353,841, 'SoftBank/1.0/822SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/820P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(212547,170810,22353,841, 'SoftBank/1.0/820P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/705P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(285525,170810,284590,841, 'SoftBank/1.0/705P/PJP10 Browser/Teleca-Browser/3.1 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/001P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(310498,170810,22353,841, 'SoftBank/1.0/001P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/840P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(338644,170810,22353,841, 'SoftBank/1.0/840P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/840Pe')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(338644,170810,22353,841, 'SoftBank/1.0/840Pe/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/805SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(341310,170810,35698,841, 'SoftBank/1.0/805SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/709SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(214347,170810,35698,841, 'SoftBank/1.0/709SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_wizard')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(149285,16143,82449,841, 'Vodafone/1.0/HTC_wizard/2.21.3.102/Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; PPC; 240x320)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/912T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(461993,170810,35698,841, 'SoftBank/1.0/912T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/810T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462569,170810,35698,841, 'SoftBank/1.0/810T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/821P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464451,170810,22353,841, 'SoftBank/1.0/821P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/815SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464739,170810,22353,841, 'SoftBank/1.0/815SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/814SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464739,170810,22353,841, 'SoftBank/1.0/814SH/SHJ001 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/930SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(201566,170810,22353,841, 'SoftBank/1.0/930SC/SCJ001/SNXXXXXXXXXXXXXXX Browser/NetFront/3.4');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/930P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(227364,170810,22353,841, 'SoftBank/1.0/930P/PJP22 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/921P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(327523,170810,22353,841, 'SoftBank/1.0/921P/PJP21 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/705SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(353865,170810,35698,841, 'SoftBank/1.0/705SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/814T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464307,170810,35698,841, 'SoftBank/1.0/814T/TJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHX510V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(214275,17935,7664,841, 'Vodafone/1.0/SamsungSGHX510V/X510BUFK3 Browser/Nokia/3.0.1 Profile/MIDP-2.0 Configuration/CLDC-1.0');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/911T')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(338284,170810,35698,841, 'SoftBank/1.0/911T/TJ002 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHC510V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(428956,17935,27772,841, 'Vodafone/1.0/SamsungSGHC510V');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/810P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462209,170810,22353,841, 'SoftBank/1.0/810P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/706SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462641,170810,35698,841, 'SoftBank/1.0/706SC/SCJ001 Browser/NetFront/3.3 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/940P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(310426,170810,22353,841, 'SoftBank/1.0/940P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/931P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(341094,170810,22353,841, 'SoftBank/1.0/931P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SAMSUNG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(156991,17935,27772,841, 'Vodafone/1.0/SAMSUNG-SGH-J700V/BUHB1/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/HTC_VPACompactIV')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(364333,16143,82449,841, 'Vodafone/1.0/HTC_VPACompactIV/5.4.172.1/Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; MIDP-2.0 Configuration/CLDC-1.1; PPC; 240x320)');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/830P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(409670,170810,22353,841, 'SoftBank/1.0/830P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/822P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(464523,170810,22353,841, 'SoftBank/1.0/822P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/830SHp')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,16149,841, 'SoftBank/1.0/830SHp/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/823P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,16149,841, 'SoftBank/1.0/823P/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/840P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(338644,170810,16149,841, 'SoftBank/1.0/840P/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/840Pe')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(338644,170810,16149,841, 'SoftBank/1.0/840Pe/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/709SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(214347,170810,16149,841, 'SoftBank/1.0/709SC/SCJ001 Java/Java/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/830SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(243591,170810,35698,841, 'SoftBank/1.0/830SC/SCJ001 Browser/NetFront/3.3');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/940SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(27547,170810,16998,841, 'SoftBank/1.0/940SC/SCJ001 Browser/NetFront/3.5 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/842P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(384500,170810,22353,841, 'SoftBank/1.0/842P/PJP10 Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/SamsungSGHC510V')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(428956,17935,18014,841, 'Vodafone/1.0/SamsungSGHC510V/C510XXGC7/Browser/Openwave/6.2.3');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'Vodafone/1.0/LG')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(206710,5556,16149,841, 'Vodafone/1.0/LG-KU380/V10a');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/923SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(462856,170810,22353,841, 'SoftBank/1.0/923SH/SHJ001/SNXXXXXXXXXXXXXXX Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/825SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(465169,170810,22353,841, 'SoftBank/1.0/825SH/SHJ001/SNXXXXXXXXXXXXXXX Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/930SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(469854,170810,22353,841, 'SoftBank/1.0/930SH/SHJ001/SNXXXXXXXXXXXXXXX Browser/NetFront/3.4 Profile/MIDP-2.0 Configuration/CLDC-1.1');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/DM003SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(471869,170810,16149,841, 'SoftBank/1.0/DM003SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/731SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(349887,170810,16149,841, 'SoftBank/1.0/731SC/SCJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/934SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(471971,170810,16149,841, 'SoftBank/1.0/934SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/936SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(472043,170810,16149,841, 'SoftBank/1.0/936SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/931P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(341094,170810,16149,841, 'SoftBank/1.0/931P/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/830SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(243591,170810,16149,841, 'SoftBank/1.0/830SC/SCJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'J-PHONE/3.0/J')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(472115,21108,16149,841, 'J-PHONE/3.0/J-SH08');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/740SC')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(170817,170810,16149,841, 'SoftBank/1.0/740SC/SCJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/930P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(227364,170810,16149,841, 'SoftBank/1.0/930P/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/940SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(473339,170810,16149,841, 'SoftBank/1.0/940SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/940P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(310426,170810,16149,841, 'SoftBank/1.0/940P/PJP10');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/941SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(473411,170810,16149,841, 'SoftBank/1.0/941SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/DM005SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(475284,170810,16149,841, 'SoftBank/1.0/DM005SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/DM006SH')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(476796,170810,16149,841, 'SoftBank/1.0/DM006SH/SHJ001');
+    $ls = $ns;
+  }
+  $ns = E95($segments, array(0 => array(0 => 'SoftBank/1.0/842P')), $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+    }
+    $dl[] = array(384500,170810,16149,841, 'SoftBank/1.0/842P/PJP10');
     $ls = $ns;
   }
   return $dl;

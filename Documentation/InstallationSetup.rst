@@ -23,3 +23,7 @@ Installation & Setup
 .. figure:: Images/EMOptions.png
 	:alt: Extension Manger Options
 	:align: left
+
+- 	In your main TypoScript template enter:
+
+	page.config.tx_bnadaptiveprofiles.enable = 1

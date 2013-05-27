@@ -90,7 +90,7 @@ class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 	 */
 	public function getCurrentProfile() {
 		// If there's a parameter in the URL, use that as a current.
-		$defaultProfileFromUrl = strip_tags(t3lib_div::_GET('tx_bnadaptiveprofile'));
+		$defaultProfileFromUrl = strip_tags(\TYPO3\CMS\Core\Utility\GeneralUtility::_GET('tx_bnadaptiveprofile'));
 		if ($defaultProfileFromUrl) {
 			$this->currentProfile = $this->getProfile($defaultProfileFromUrl);
 		}
