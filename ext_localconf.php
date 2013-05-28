@@ -16,6 +16,14 @@ if ($filterContentElementsByProfile) {
 }
 
 if (TYPO3_MODE === 'FE') {
-	require_once(\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Classes/Service/ProfileService.php');
+	/**
+	 * User function to check if the specified profile is in use.
+	 *
+	 * @return boolean
+	 */
+	function user_hasProfile($profileName) {
+		$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
+		return $profileService->hasProfile($profileName);
+	}
 }
 ?>
