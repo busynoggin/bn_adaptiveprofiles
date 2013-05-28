@@ -6,7 +6,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	/**
 	 * Includes the JavaScript for adaptive profiles in the frontend output of the page.
-	 * Requires that config.tx_bnadaptiveprofiles_enable=1 is set.
+	 * Requires that config.tx_bnadaptiveprofiles.enable=1 is set.
 	 *
 	 * @return void
 	 */
@@ -72,7 +72,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * @return void
 	 */
 	public function includeAdapativeProfilesInHash(&$params) {
-		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles_enable']) {
+		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['enable']) {
 			$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 			$profiles = $profileService->getProfiles();
 			$currentProfile = $profileService->getCurrentProfile();
