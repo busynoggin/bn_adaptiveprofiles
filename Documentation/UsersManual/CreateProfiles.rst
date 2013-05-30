@@ -12,7 +12,7 @@ Create Profiles
 ================================
 
 -
-    In the list module, go to the root of your TYPO3 installation and add a new Adaptive Profile record.
+    In the list module, go to the root of your TYPO3 installation and add a new Adaptive Profile record. This the root of your TYPO3 installation not the root page of your site.
 
     .. figure:: Images/AddProfile.png
         :alt: Update Database
