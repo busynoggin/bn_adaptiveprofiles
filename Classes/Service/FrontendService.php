@@ -72,13 +72,10 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * @return void
 	 */
 	public function includeAdapativeProfilesInHash(&$params) {
-		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['enable']) {
-			$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
-			$profiles = $profileService->getProfiles();
-			$currentProfile = $profileService->getCurrentProfile();
-
-			$params['hashParameters']['profile'] = $currentProfile['name'];
-		}
+		$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
+		$profiles = $profileService->getProfiles();
+		$currentProfile = $profileService->getCurrentProfile();
+		$params['hashParameters']['profile'] = $currentProfile['name'];
 	}
 
 }
