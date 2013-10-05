@@ -13,9 +13,12 @@
 What does it do?
 ================================
 
-The Adaptive Profiles is for sensing the clients device screen widht and matching that to a custom profile. The rendering of the page is governed by that profile. This is a way to approach responsive and adaptive designs.
+The Adaptive Profiles is for sensing the clients device screen width and matching that to a custom profile. The rendering of the page is governed by that profile. This is a way to approach responsive and adaptive designs.
 
 It was specifically developed by Busy Noggin to work with the TemplaVoila Framework extension but can be used with any TYPO3 templating approach.
+
+|   If you are interested, documentation for the TemplaVoila Framework is located at:
+|   `www.busynoggin.com/extensions/bn_templavoilaframework/ <http://www.busynoggin.com/extensions/bn_templavoilaframework/>`_
 
 ================================
 Project Information
