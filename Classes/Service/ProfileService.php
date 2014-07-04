@@ -1,6 +1,8 @@
 <?php
 
-class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
+namespace BusyNoggin\BnAdaptiveprofiles\Service;
+
+class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 
 	protected $screenWidth = NULL;
 	protected $defaultProfile = NULL;
@@ -88,7 +90,7 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 */
 	public function getCurrentProfile() {
 		// If there's a parameter in the URL, use that as a current.
-		$defaultProfileFromUrl = strip_tags(t3lib_div::_GET('tx_bnadaptiveprofile'));
+		$defaultProfileFromUrl = strip_tags(\TYPO3\CMS\Core\Utility\GeneralUtility::_GET('tx_bnadaptiveprofile'));
 		if ($defaultProfileFromUrl) {
 			$this->currentProfile = $this->getProfile($defaultProfileFromUrl);
 		}
@@ -146,7 +148,7 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 	 * @return integer
 	 */
 	protected function getScreenWidthFromUserAgent() {
-		$pathTo51Degrees = t3lib_extMgm::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
 		include_once($pathTo51Degrees . '51Degrees.mobi.php');
 		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
 		if ($_51d['ScreenPixelsWidth'] && $_51d['ScreenPixelsWidth'] !== 'Unknown') {
@@ -158,16 +160,33 @@ class Tx_BnAdaptiveProfiles_Service_ProfileService implements t3lib_Singleton {
 
 		return $screenWidth;
 	}
-}
 
-/**
- * User function to check if the specified profile is in use.
- *
- * @return boolean
- */
-function user_hasProfile($profileName) {
-	$profileService = t3lib_div::makeInstance('Tx_BnAdaptiveProfiles_Service_ProfileService');
-	return $profileService->hasProfile($profileName);
+	/**
+	 * Checks whether the device has the given value for the property
+	 *
+	 * @param string $propertyName
+	 * @param mixed $propertyValue
+	 */
+	public function deviceHasPropertyValue($propertyName, $propertyValue) {
+		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+		include_once($pathTo51Degrees . '51Degrees.mobi.php');
+		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+		if (array_key_exists($propertyName, $_51d)) {
+			$_51dValue = $_51d[$propertyName];
+
+			if ($_51dValue === 'True') {
+				$_51dValue = TRUE;
+			} elseif ($_51dValue === 'False') {
+				$_51dValue = FALSE;
+			}
+
+			$result = ($_51dValue == $propertyValue);
+		} else {
+			$result = FALSE;
+		}
+
+		return $result;
+	}
 }
 
 ?>

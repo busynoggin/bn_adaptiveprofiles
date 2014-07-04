@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -44,113 +37,1013 @@ function E70($target, $test, $ls) {
 function _H70($useragent) {
   $ls = PHP_INT_MAX;
   $dl = array();
-  $ua = 'Qtek8010 (Mozilla/4.0 compatible; MSIE 4.01; Windows CE; Smartphone; 176x220)';
+  $ua = 'NEXIAN Profile/MIDP-2.0 Configuration/CLDC-1.1';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,5448,4578,18092, $ua);
+    $dl[] = array(27547,21108,16149,841, $ua);
   }
-  $ua = 'Qtek9090; Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; PPC; 240x320)';
+  $ua = 'Nexian';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,5448,4578,18092, $ua);
+    $dl[] = array(158071,21108,96218,841, $ua);
   }
-  $ua = 'Qtek_9100/Mozilla/4.0 (compatible; MSIE 4.01; Windows CE; PPC; 240x320)';
+  $ua = 'NexianNX-T911/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,5448,4578,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek8020 (Mozilla\\4.0 compatible; MSIE 4.01; Windows CE; Smartphone; 176x220)';
+  $ua = 'NexianNX-T922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,5448,4578,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek S100';
+  $ua = 'NexianNX-D980/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek8010';
+  $ua = 'Nexian NX-T905/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek8080';
+  $ua = 'NexianNX-D981/MTK Release/23.3.2010 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek8080/DBK (;; 4.20.13291.0; Windows Mobile 2003; Smartphone; 176x220)';
+  $ua = 'NexianNX-G915/MTK Release/27.11.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek9090';
+  $ua = 'Nexian-NXG777/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek S200/2.9.7.122 Mozilla/4.0 Profile/MIDP-2.0 Configuration/CLDC-1.1 (Compatible; MSIE 4.01;Windows CE; PPC; 240X320) UP.Link/6.2.3.15.0 (compatible; MSIE 4.01; Windows     CE; PPC; 240x320)';
+  $ua = 'NexianNX-T901/MTK Release/19.04.2011 Browser/MAUI Profile/MIDP2.0Configuration/CLDC-1';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16175,5448,4578,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek S200';
+  $ua = 'NexianNX-A725/MTK Release/12.07.2011 Browser/MAUI Profile/MIDP2.0Configuration/CLDC-1';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16175,17017,17470,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
   }
-  $ua = 'Qtek8020 (Mozilla\\\\4.0 compatible; MSIE 4.01; Windows CE; Smartphone; 176x220)Mozilla/4.0 (compatible; MSIE 6.0; Windows CE; IEMobile 6.8) PPC; 240x320;SPV M3100; OpVer 14.211.1.613';
+  $ua = 'NexianNX-G925/MTK Release/01.01.2010 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
   $ns = E70($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16070,7238,15792,18092, $ua);
+    $dl[] = array(27547,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-T908/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G269/MTK Release/01.01.2012 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-T910/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G855/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G857/MTK Release/10.1.2009 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G506/MTK Release/01.01.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G265/MTK Release/15.02.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G253/MTK Release/01.01.2010 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G252/MTK Release/01.01.2010 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G315/MTK Release/10.1.2009 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G256/MTK Release/01.01.2010 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G236/MTK Release/01.01.2010 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G268/MTK Release/15.02.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G262/MTK Release/19.04.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G311/MTK Release/30.05.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'Nexian G263/MTK Release/01.01.2012 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G332/MTK Release/22.11.2007 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNXG311T/MTK Release/20.09.2011 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'Nexian G257/MTK Release/01.01.2012 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G967/MTK  Release/01.01.2011/MAUI Browser/Opera Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; U; id-ID) Presto/2.5.28 Version/10.10';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,158296,841, $ua);
+  }
+  $ua = 'NexianNX-G963/MTK  Release/01.01.2011/MAUI Browser/Opera Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; U; en-US) Presto/2.5.28 Version/10.10';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,158296,841, $ua);
+  }
+  $ua = 'NexianNX-G963/MTK Release/01.01.2011/MAUI Browser/Opera Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; U; id-ID) Presto/2.5.28 Version/10.10';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,158296,841, $ua);
+  }
+  $ua = 'NexianNX-G963/MTK  Release/01.01.2011/MAUI Browser/Opera Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; U; id-ID) Presto/2.5.28 Version/10.10';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,158296,841, $ua);
+  }
+  $ua = 'NexianNX-G967/MTK  Release/01.01.2011/MAUI Browser/Opera Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; U; en-US) Presto/2.5.28 Version/10.10';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(27547,21108,158296,841, $ua);
+  }
+  $ua = 'NexianNX-G922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(402138,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(402138,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.ml; profile=http://www.wapforuml; profile=http://www.wapforum.org/xhtml, application/vnd.wwap.wmlc, application/vnd.wap.wap.wmlc, application/vnd.wap.wmlscriptc, text/vn';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(402138,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G868/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(264209,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G868/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(264209,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G868T/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(264209,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G869/MTK Release/01.01.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(313380,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G869/MTK Release/01.01.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(313380,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G965/MTK Release/21.04.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1  Opera/9.80 (MTK; Nucleus; U; en-US) Presto/2.4.18 Version/10.00';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(337996,21108,337061,841, $ua);
+  }
+  $ua = 'NexianNX-G965/MTK Release/21.04.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; Nucleus; U; id-ID) Presto/2.4.18 Version/10.00';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(337996,21108,337061,841, $ua);
+  }
+  $ua = 'NexianNX-G965/MTK Release/21.04.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Opera/9.80 (MTK; Nucleus; U; en-US) Presto/2.4.18 Version/10.00';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(337996,21108,337061,841, $ua);
+  }
+  $ua = 'NexianNX-G965/MTK Release/21.04.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1  Opera/9.80 (MTK; Nucleus; U; id-ID) Presto/2.4.18 Version/10.00';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(337996,21108,337061,841, $ua);
+  }
+  $ua = 'Nexian NX-G508/MTK Release/10.01.2009 Browser/MAUI profile/No Java';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,203314,841, $ua);
+  }
+  $ua = 'Nexian NX-G508/MTK Release/10.01.2009 Browser/MAUI profile/No Java Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,203314,841, $ua);
+  }
+  $ua = 'Nexian NX-G507/MTK Release/10.01.2009 Browser';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(204250,21108,16149,841, $ua);
+  }
+  $ua = 'Nexian NX-G507/MTK Release/10.01.2009 Browser Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(204250,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G353/MTK Release/01.01.2010 Browser/MAUI Profile Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(221032,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G353/MTK Release/01.01.2010 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(221032,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G821/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(373206,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G821/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(373206,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian-NXG821/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(373206,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian-NXG821/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(373206,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G801/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(474492,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G801/MTK Release/5.12.2011 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(474492,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G801/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(474492,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G733/MTK Release/10.01.2009/Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(351760,21108,220095,841, $ua);
+  }
+  $ua = 'Nexian NX-G733/MTK Release/10.01.2009 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(351760,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G889/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269246,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G889/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269246,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G912/MTK Release/27.11.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(474276,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G912/MTK Release/27.11.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(474276,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G509/MTK Release/10.01.2009 Browser/MAUI Profile Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,220095,841, $ua);
+  }
+  $ua = 'Nexian NX-G509/MTK Release/10.01.2009 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-W755/MTK Release/01.01.2011 Browser/MAUI Profile/MIDP2.0Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(349671,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-NXT901/MTKRelease/11-20-2010Browser/MAUIProfile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(258824,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-NXT901/MTKRelease/11-20-2010Browser/MAUIProfile Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(258824,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G920/MTK Release/01.01.2010 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(270614,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G505/MTK Release/10.1.2009 browser/MAUI Profile/MIDP-2.0 configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(204250,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G505/MTK Release/10.1.2009 browser/MAUI Profile/MIDP-2.0 configuration/CLDC-1.0 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(204250,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G331/MTK Release/02.09.2009 Browser/MAUI Profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(300050,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G331/MTK Release/02.09.2009 Browser/MAUI Profile Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(300050,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-W750/MTK Release/01.01.2010 Browser/MAUI Profile/MIDP2.0 Configuration/CLCD-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269102,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G235/MTK Release/10.01.2010 Browser/MAUI profile Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(347005,21108,220095,841, $ua);
+  }
+  $ua = 'NexianNX-G235/MTK Release/10.01.2010 Browser/MAUI profile';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(347005,21108,220095,841, $ua);
+  }
+  $ua = 'NEXIAN NX-G911';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(469565,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-T780/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(318429,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G505/MTK Release/10.01.2009 Browser/MAUI Profile/No Java';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(204250,21108,203314,841, $ua);
+  }
+  $ua = 'Nexian NX-T909/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(266870,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-T909/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(266870,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-NXT901U/MTK Release/11-20-2010 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(258824,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G901/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(258824,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G733/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(351760,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G733/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(351760,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G730/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(267806,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G730/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1 Novarra-Vision/8.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(267806,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G780/MTK Release/01.01.2011 Browser/MAUI Profile/MIDP2.0Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(314179,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNXG798/MTK Release/10.1.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(314755,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G238/MTK Release/22.11.2007 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(353425,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G755/SPR Release/01.03.2011 Browser/Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(347221,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G272/MTK Release/01.01.2011 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(314611,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G988/MTK Release/10.01.2009 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(252914,21108,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G933/MTK Release/01.01.2010 Browser/MAUI Profile/MIDP2.0 Configuration/CLDC-1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269030,21108,228306,841, $ua);
+  }
+  $ua = 'Nexian NX-G509';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,16149,841, $ua);
+  }
+  $ua = 'Nexian NX-G508';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(241647,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-T780/MTK Profile/MIDP-2.0 Configuration/CLDC-1.1';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(318429,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-W750';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269102,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G933';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269030,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G868';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(264209,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G730';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(267806,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G889';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(269246,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G353';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(221032,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-NXT901';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(258824,21108,16149,841, $ua);
+  }
+  $ua = 'Nexian NX-T909';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(266870,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G988';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(252914,21108,16149,841, $ua);
+  }
+  $ua = 'NexianNX-G922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0,gzip(gfe) AppEngine-Google; (+http://code.google.com/appengine; appid: wap-proxy)';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(402138,292349,228306,841, $ua);
+  }
+  $ua = 'NexianNX-G922/MTK Release/7.15.2009 Browser/MAUI Profile/MIDP-2.0 Configuration/CLDC-1.0,gzip(gfe) AppEngine-Google; (+http://code.google.com/appengine; appid: 244hours)';
+  $ns = E70($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(402138,292349,228306,841, $ua);
   }
   return $dl;
 }

@@ -21,17 +21,19 @@ $EM_CONF[$_EXTKEY] = array(
 	'conflicts' => '',
 	'priority' => '',
 	'module' => '',
-	'state' => 'alpha',
+	'state' => 'stable',
 	'internal' => '',
 	'uploadfolder' => 0,
-	'createDirs' => 'typo3temp/wurfl/persistence,typo3temp/wurfl/cache',
+	'createDirs' => '',
 	'modify_tables' => '',
 	'clearCacheOnLoad' => 0,
 	'lockType' => '',
-	'author_company' => '',
-	'version' => '0.0.0',
+	'author_company' => 'Busy Noggin Digital',
+	'version' => '1.0.0-beta1',
 	'constraints' => array(
 		'depends' => array(
+			'php' => '5.3.0-0.0.0',
+			'typo3' => '6.0.0-6.2.99'
 		),
 		'conflicts' => array(
 		),

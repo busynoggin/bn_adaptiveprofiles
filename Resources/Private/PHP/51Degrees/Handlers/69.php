@@ -7,14 +7,7 @@
  */
 
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -44,455 +37,518 @@ function E69($target, $test, $ls) {
 function _H69($useragent) {
   $ls = PHP_INT_MAX;
   $dl = array();
-  $ua = 'portalmmm/2.0 S500i(c20;TB)';
+  $ua = 'NEC-ARM9-BRCM_EDGE';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17301,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 LG342i(c10;TB)';
+  $ua = 'NEC-E122/1.0 TMT-Mobile-Internet-Browser/1.1.14.20 (GUI)';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15364,17483,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 LG342i(c10;TJ)';
+  $ua = 'NEC-e122';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15364,17483,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 LG342i(c30;TD)';
+  $ua = 'NEC-e242';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15364,17483,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S400i';
+  $ua = 'NEC-e1101/(2005.02.18)1.0/WAP1.2.1 Profile';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17298,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S400i(c10;TB)';
+  $ua = 'NEC-e121';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17298,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S400i(c100,TB)';
+  $ua = 'NEC-N200/REV 2.2.2/WAP1.2.1 Profile';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17298,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S400i(c10,TJ)';
+  $ua = 'NEC-N110';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17298,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S400i(c10;TC)';
+  $ua = 'NEC-N200';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17298,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 K550im(c100;TB)';
+  $ua = 'NEC-N500/REV 2.2.1/WAP1.2.1 Profile';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15428,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 K550im(c20;TD)';
+  $ua = 'NEC-N700';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15428,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 K550im(c100;TJ)';
+  $ua = 'NEC-N710';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15428,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 K550im(c100;TC)';
+  $ua = 'NEC-N800';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(15428,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z650i';
+  $ua = 'NEC-N830';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17230,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z650i(c20;TB)';
+  $ua = 'NEC-N600/1.0 HopenOS/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17230,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z650i(c100;TB)';
+  $ua = 'NEC-N6206/1.0 Release/06.15.2006 Browser/CMS2.0.0 Profile/MIDP-2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17230,17017,17470,18092, $ua);
+    $dl[] = array(360373,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z650i(c300;TB)';
+  $ua = 'NEC-N6206/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17230,17017,17470,18092, $ua);
+    $dl[] = array(360373,202142,16149,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z320i';
+  $ua = 'NEC-110/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.9.d.1 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17284,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z320i(c100;TB)';
+  $ua = 'NEC-e242/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17284,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z320i(c30;TD)';
+  $ua = 'NEC-e121/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.9.d.1 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17284,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 Z320i(c10;TJ)';
+  $ua = 'NEC-N535/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.107 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17284,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S410i';
+  $ua = 'NEC-N700/1.0 UP.Browser/6.2.2.4.d.1.102 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17325,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S410i(c10;TB)';
+  $ua = 'NEC-N710/1.0 UP.Browser/6.2.2.6.e.1.101 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17325,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S410i(c10;TC)';
+  $ua = 'NEC-N830/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.e.1.101 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17325,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S410i(c10;TJ)';
+  $ua = 'NEC-N820/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.2.2.6.e.1.101 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17325,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S410i(c30;TB)';
+  $ua = 'NEC-N850/(2005.04.25)FJCC/WAP2.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17325,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S401i(c10;TB)';
+  $ua = 'NEC-N900/1.0 UP.Browser/6.2.2.4.d.1.103 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17244,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG345i(c10;TB)';
+  $ua = 'NEC-e373/001.00 NetFront/3.2 Profile/MIDP-2.0 Configuration/CLDC-1 Qtv/1.00';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16813,17017,17470,18092, $ua);
+    $dl[] = array(386371,202142,46102,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S342i(c10;TB)';
+  $ua = 'NEC-e373/001.00 NetFront/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1 Qtv/1.00';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17328,17017,17470,18092, $ua);
+    $dl[] = array(386371,202142,46102,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S342i(c30;TB)';
+  $ua = 'NEC-110';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17328,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S342i(c100;TB)';
+  $ua = 'NEC-530';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17328,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S501i';
+  $ua = 'NEC-525';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17268,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S501i(c20;TB)';
+  $ua = 'NEC-N8';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17268,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG342i';
+  $ua = 'NEC-606';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16784,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG342i(c10;TB)';
+  $ua = 'NEC-616';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16784,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,96218,841, $ua);
   }
-  $ua = 'portalmmm/2.0 my401Ci';
+  $ua = 'NEC-530/1.0 UP.Browser/6.1.0.7 (GUI) MMP/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16548,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,194008,841, $ua);
   }
-  $ua = 'portalmmm/2.0 my401Ci(c10;TB)';
+  $ua = 'NEC-e101/2.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.7.8 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16548,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,194008,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG321i';
+  $ua = 'NEC-N8/1.0 UP.Browser/6.1.0.4.128 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16751,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,194008,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG321i (c10;TB)';
+  $ua = 'NEC-N8/1.0 UP.Browser/6.1.0.5 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16751,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,194008,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG321i(c10;TB)';
+  $ua = 'NEC-N810/1.0 Profile/MIDP-1.0 Configuration/CLDC-1.0 UP.Browser/6.1.0.6.1.f.2 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16751,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,194008,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S720i';
+  $ua = 'NEC-N840/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17171,17017,17470,18092, $ua);
+    $dl[] = array(202149,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S720i(c10;TB)';
+  $ua = 'NEC-e238/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.106 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17171,17017,17470,18092, $ua);
+    $dl[] = array(299401,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S730i';
+  $ua = 'NEC-E232/1.0 UP.Browser/6.2.3.2.g.1.106 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17169,17017,17470,18092, $ua);
+    $dl[] = array(331987,21108,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 S730i(c20;TB)';
+  $ua = 'NEC-E232/1.0 UP.Browser/6.2.2.6.e.1.101 (GUI) MMP/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(17169,17017,17470,18092, $ua);
+    $dl[] = array(331987,21108,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG341i (c10;TB)';
+  $ua = 'NEC-E232/1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16767,17017,17470,18092, $ua);
+    $dl[] = array(331987,21108,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG346i';
+  $ua = 'NEC-e353/001.00 ACS-NF/3.2 Profile/MIDP-2.0 Configuration/CLDC-1.1 Qtv/1.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16814,17017,17470,18092, $ua);
+    $dl[] = array(34682,202142,46102,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG346i(c10;TB)';
+  $ua = 'NEC-e540/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.110 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16814,17017,17470,18092, $ua);
+    $dl[] = array(253633,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG321i (c10;TB) Profile/DoCoMoProfile-1.5oe Configuration/CLDC-1.0 UP.Browser/7.0.0.1.102 (GUI)';
+  $ua = 'NEC-e540/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16751,17658,4222,18092, $ua);
+    $dl[] = array(253633,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG343i(c10;TB)';
+  $ua = 'NEC-e949/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.110 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16785,17017,17470,18092, $ua);
+    $dl[] = array(363397,202142,18014,841, $ua);
   }
-  $ua = 'portalmmm/2.0 SG344i(c10;TB)';
+  $ua = 'NEC-e949/1.0 Profile/MIDP-2.0 Configuration/CLDC-1.0 UP.Browser/6.2.3.2.g.1.108 (GUI) MMP/2.0';
   $ns = E69($useragent, $ua, $ls);
   if ($ns <= $ls) {
     if ($ns < $ls) {
       unset($dl);
       $ls = $ns;
     }
-    $dl[] = array(16793,17017,17470,18092, $ua);
+    $dl[] = array(363397,202142,18014,841, $ua);
+  }
+  $ua = 'NEC-ARM9-BRCM_EDGE/0.1 UP.Browser/7.0.1.240 (GUI) MMP/2.0';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(34682,202142,62730,841, $ua);
+  }
+  $ua = 'NEC-e373';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(386371,202142,16149,841, $ua);
+  }
+  $ua = 'NEC-DB7000/1.0 UP.Browser/4';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(34682,202142,429604,841, $ua);
+  }
+  $ua = 'NEC-DB7000/1.0 UP.Browser/4.1.23c';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(34682,202142,425845,841, $ua);
+  }
+  $ua = 'NEC-e540';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(253633,202142,16149,841, $ua);
+  }
+  $ua = 'NEC-e238';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(299401,202142,16149,841, $ua);
+  }
+  $ua = 'NEC-e949';
+  $ns = E69($useragent, $ua, $ls);
+  if ($ns <= $ls) {
+    if ($ns < $ls) {
+      unset($dl);
+      $ls = $ns;
+    }
+    $dl[] = array(363397,202142,16149,841, $ua);
   }
   return $dl;
 }

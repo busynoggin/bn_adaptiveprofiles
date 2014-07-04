@@ -1,13 +1,6 @@
 <?php
 /**
- * This Source Code Form is subject to the terms of the Mozilla Public License,
- * v. 2.0.
- *
- * If a copy of the MPL was not distributed with this file, You can obtain one
- * at http://mozilla.org/MPL/2.0/.
- *
- * This Source Code Form is "Incompatible With Secondary Licenses", as defined
- * by the Mozilla Public License, v. 2.0.
+ * See LICENSE.TXT for terms of use and copyright.
  */
 
 /**
@@ -25,7 +18,7 @@
 define("LEVENSHTEIN_MAX_LENGTH", 255);
 
  /**
- * Function Documentation
+ * Todo
  */
 function fiftyone_degrees_edit_distance($str1, $str2, $ls) {
   // If the lowest score is zero then these strings must
