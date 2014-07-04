@@ -160,6 +160,33 @@ class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 
 		return $screenWidth;
 	}
+
+	/**
+	 * Checks whether the device has the given value for the property
+	 *
+	 * @param string $propertyName
+	 * @param mixed $propertyValue
+	 */
+	public function deviceHasPropertyValue($propertyName, $propertyValue) {
+		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+		include_once($pathTo51Degrees . '51Degrees.mobi.php');
+		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+		if (array_key_exists($propertyName, $_51d)) {
+			$_51dValue = $_51d[$propertyName];
+
+			if ($_51dValue === 'True') {
+				$_51dValue = TRUE;
+			} elseif ($_51dValue === 'False') {
+				$_51dValue = FALSE;
+			}
+
+			$result = ($_51dValue == $propertyValue);
+		} else {
+			$result = FALSE;
+		}
+
+		return $result;
+	}
 }
 
 ?>
