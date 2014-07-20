@@ -148,9 +148,7 @@ class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * @return integer
 	 */
 	protected function getScreenWidthFromUserAgent() {
-		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
-		include_once($pathTo51Degrees . '51Degrees.mobi.php');
-		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+		$_51d = $this->get51DegreesProperties();
 		if ($_51d['ScreenPixelsWidth'] && $_51d['ScreenPixelsWidth'] !== 'Unknown') {
 			$screenWidth = $_51d['ScreenPixelsWidth'];
 		} else {
@@ -168,9 +166,7 @@ class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 	 * @param mixed $propertyValue
 	 */
 	public function deviceHasPropertyValue($propertyName, $propertyValue) {
-		$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
-		include_once($pathTo51Degrees . '51Degrees.mobi.php');
-		include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+		$_51d = $this->get51DegreesProperties();
 		if (array_key_exists($propertyName, $_51d)) {
 			$_51dValue = $_51d[$propertyName];
 
@@ -187,6 +183,24 @@ class ProfileService implements \TYPO3\CMS\Core\SingletonInterface {
 
 		return $result;
 	}
+
+	/**
+	 * Gets the properties from 51degrees, caching them for future usage.
+	 *
+	 * @return array
+	 */
+	public function get51DegreesProperties() {
+		if (!$this->_51d) {
+			$pathTo51Degrees = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extPath('bn_adaptiveprofiles') . 'Resources/Private/PHP/51Degrees/';
+			include_once($pathTo51Degrees . '51Degrees.mobi.php');
+			include_once($pathTo51Degrees . '51Degrees.mobi.usage.php');
+
+			$this->_51d = $_51d;
+		}
+
+		return $this->_51d;
+	}
+
 }
 
 ?>
