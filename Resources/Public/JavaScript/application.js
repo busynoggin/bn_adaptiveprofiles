@@ -13,7 +13,9 @@
 
 			// When the device orientation changes, reload page if necessary
 			window.onorientationchange = function() {
-				apply();
+				window.setTimeout(function() {
+					apply();
+				}, 500);
 			};
 		}
 
