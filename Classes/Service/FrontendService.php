@@ -28,7 +28,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 	 		}
 	 		$js = 'var BN_ADAPTIVE_PROFILES_CONFIG = { profiles: ' . json_encode($jsonProfiles) . '};' . LF;
 
-	 		$javaScriptPath = ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['javaScriptPath']) ? $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles']['javaScriptPath'] : 'EXT:bn_adaptiveprofiles/Resources/Public/JavaScript/application.js';
+	 		$javaScriptPath = ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['javaScriptPath']) ? $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles']['javaScriptPath'] : 'EXT:bn_adaptiveprofiles/Resources/Public/JavaScript/application.min.js';
 
 	 		// Read application JS into string
 	 		$js .= \TYPO3\CMS\Core\Utility\GeneralUtility::getUrl(\TYPO3\CMS\Core\Utility\GeneralUtility::getFileAbsFileName($javaScriptPath));

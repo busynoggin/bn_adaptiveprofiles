@@ -16,6 +16,9 @@ if ($filterContentElementsByProfile) {
 }
 
 if (TYPO3_MODE === 'FE') {
+
+	$TYPO3_CONF_VARS['SC_OPTIONS']['tslib/class.tslib_fe.php']['contentPostProc-output'][] = 'BusyNoggin\\BnAdaptiveprofiles\\Service\\HeaderService->sendAdaptiveProfileHeaders';
+
 	/**
 	 * User function to check if the specified profile is in use.
 	 *
