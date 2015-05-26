@@ -14,6 +14,12 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 		if ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['enable'] && (TYPO3_MODE === 'FE') && !\TYPO3\CMS\Core\Utility\GeneralUtility::_GET('tx_bnadaptiveprofile')) {
 			$profileService = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance('BusyNoggin\\BnAdaptiveprofiles\\Service\\ProfileService');
 
+			if(isset($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['sizingMode'])) {
+				$sizingMode = $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['sizingMode'];
+			} else {
+				$sizingMode = 'screen';
+			}
+
 			// Convert profiles to JSON
 			$profiles = $profileService->getProfiles();
 			$currentProfile = $profileService->getCurrentProfile();
@@ -26,7 +32,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 					'isCurrentProfile' => ($profile['name'] === $currentProfile['name'])
 				);
 	 		}
-	 		$js = 'var BN_ADAPTIVE_PROFILES_CONFIG = { profiles: ' . json_encode($jsonProfiles) . '};' . LF;
+	 		$js = 'var BN_ADAPTIVE_PROFILES_CONFIG = { sizingMode: "' . $sizingMode . '", profiles: ' . json_encode($jsonProfiles) . '};' . LF;
 
 	 		$javaScriptPath = ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['javaScriptPath']) ? $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles']['javaScriptPath'] : 'EXT:bn_adaptiveprofiles/Resources/Public/JavaScript/application.min.js';
 

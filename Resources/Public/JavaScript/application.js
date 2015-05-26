@@ -1,11 +1,38 @@
 (function(w, d, config, undefined) {
 
+	function debounce(func, wait, immediate) {
+		var timeout;
+		return function() {
+			var context = this;
+			var args = arguments;
+			var later = function() {
+				timeout = null;
+				if (!immediate) {
+					func.apply(context, args);
+				}
+			};
+			var callNow = immediate && !timeout;
+			clearTimeout(timeout);
+			timeout = setTimeout(later, wait);
+			if (callNow) {
+				func.apply(context, args);
+			}
+		};
+	};
+
 	function calculateScreenWidth() {
 		var width;
-
 		// If the device cannot be rotated, lets assume desktop and use full screen width
 		if (typeof window.orientation === "undefined") {
-			width = w.screen.width || 0;
+			if (config.sizingMode === 'window') {
+				width = w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth || 0;
+				window.onresize = debounce(function() {
+					width = w.innerWidth || d.documentElement.clientWidth || d.body.clientWidth || 0;
+					setScreenWidthInCookie(width);
+				}, 250);
+			} else {
+				width = w.screen.width || 0;
+			}
 		} else {
 			// If the device can be rotated, lets assume mobile/tablet and a browser that always operates full width.
 			// Using browser width takes orientation into account so it is more accurate
