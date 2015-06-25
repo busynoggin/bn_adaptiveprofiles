@@ -32,7 +32,7 @@ class FrontendService implements \TYPO3\CMS\Core\SingletonInterface {
 					'isCurrentProfile' => ($profile['name'] === $currentProfile['name'])
 				);
 	 		}
-	 		$js = 'var BN_ADAPTIVE_PROFILES_CONFIG = { sizingMode: "' . $sizingMode . '", profiles: ' . json_encode($jsonProfiles) . '};' . LF;
+	 		$js = 'var BN_ADAPTIVE_PROFILES = BN_ADAPTIVE_PROFILES || {};' . LF . 'BN_ADAPTIVE_PROFILES.config = { sizingMode: "' . $sizingMode . '", profiles: ' . json_encode($jsonProfiles) . '};' . LF;
 
 	 		$javaScriptPath = ($GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles.']['javaScriptPath']) ? $GLOBALS['TSFE']->config['config']['tx_bnadaptiveprofiles']['javaScriptPath'] : 'EXT:bn_adaptiveprofiles/Resources/Public/JavaScript/application.min.js';
 
